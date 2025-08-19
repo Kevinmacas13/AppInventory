@@ -1,0 +1,37 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "organization/inventario/staging",
+        "latest": {
+            "manifest": {
+                "time": "2025-08-01T22:51:41.7635625-05:00",
+                "magic": "77be084e65c763fde87b290a0a6ba5aaacad687cde41d20d76768df34b0db77a",
+                "version": "v3.146.0"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:pjucfkSo2EI=:v1:MSRWNtDzDyyoub34:KqwqPyIu7lfXzV67p4DP4gDc0bsJVg=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:staging::inventario::pulumi:pulumi:Stack::inventario-staging",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack",
+                    "created": "2025-08-02T03:51:33.6868399Z",
+                    "modified": "2025-08-02T03:51:33.6868399Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:sst:LinkRef::apiLinkRef",
+                    "custom": false,
+                    "type": "sst:sst:LinkRef",
+                    "parent": "urn:pulumi:staging::inventario::pulumi:pulumi:Stack::inventario-staging",
+                    "created": "2025-08-02T03:51:41.7635625Z",
+                    "modified": "2025-08-02T03:51:41.7635625Z"
+                }
+            ],
+            "metadata": {}
+        }
+    }
+}

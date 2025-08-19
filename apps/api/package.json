@@ -1,0 +1,23 @@
+{
+  "name": "@inventario/api",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch run index.ts"
+  },
+  "dependencies": {
+    "@inventario/core": "workspace:*",
+    "@hono/zod-validator": "^0.4.3",
+    "@scalar/hono-api-reference": "^0.8.1",
+    "@types/express": "^5.0.1",
+    "express": "^5.1.0",
+    "hono": "^4.7.11",
+    "hono-openapi": "^0.4.6",
+    "zod": "^3.24.2",
+    "zod-openapi": "^4.2.4"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}

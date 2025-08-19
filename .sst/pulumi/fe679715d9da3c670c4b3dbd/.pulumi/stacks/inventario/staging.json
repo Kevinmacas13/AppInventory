@@ -1,0 +1,100 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "organization/inventario/staging",
+        "latest": {
+            "manifest": {
+                "time": "2025-08-01T22:54:28.7619687-05:00",
+                "magic": "77be084e65c763fde87b290a0a6ba5aaacad687cde41d20d76768df34b0db77a",
+                "version": "v3.146.0"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:vKhZ5TeD1dc=:v1:tVuOJw0UYBlbS/KS:IYzmQzHBI2WGNUvUeklMi1Aen4IwMg=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:staging::inventario::pulumi:pulumi:Stack::inventario-staging",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack",
+                    "created": "2025-08-02T03:51:33.6868399Z",
+                    "modified": "2025-08-02T03:51:33.6868399Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:StaticSite::web",
+                    "custom": false,
+                    "type": "sst:aws:StaticSite",
+                    "parent": "urn:pulumi:staging::inventario::pulumi:pulumi:Stack::inventario-staging",
+                    "created": "2025-08-02T03:54:05.1654962Z",
+                    "modified": "2025-08-02T03:54:05.1654962Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:sst:LinkRef::apiLinkRef",
+                    "custom": false,
+                    "type": "sst:sst:LinkRef",
+                    "parent": "urn:pulumi:staging::inventario::pulumi:pulumi:Stack::inventario-staging",
+                    "created": "2025-08-02T03:51:41.7635625Z",
+                    "modified": "2025-08-02T03:51:41.7635625Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::pulumi:providers:aws::default_6_66_2",
+                    "custom": true,
+                    "id": "86a6d9c9-4e6e-4273-8a9b-245f986672b2",
+                    "type": "pulumi:providers:aws",
+                    "inputs": {
+                        "__internal": {},
+                        "defaultTags": "{\"tags\":{\"sst:app\":\"inventario\",\"sst:stage\":\"staging\"}}",
+                        "region": "us-east-1",
+                        "skipCredentialsValidation": "false",
+                        "skipRegionValidation": "true",
+                        "version": "6.66.2"
+                    },
+                    "outputs": {
+                        "defaultTags": "{\"tags\":{\"sst:app\":\"inventario\",\"sst:stage\":\"staging\"}}",
+                        "region": "us-east-1",
+                        "skipCredentialsValidation": "false",
+                        "skipRegionValidation": "true",
+                        "version": "6.66.2"
+                    },
+                    "created": "2025-08-02T03:54:28.6888125Z",
+                    "modified": "2025-08-02T03:54:28.6888125Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:sst:LinkRef::webLinkRef",
+                    "custom": false,
+                    "type": "sst:sst:LinkRef",
+                    "parent": "urn:pulumi:staging::inventario::pulumi:pulumi:Stack::inventario-staging",
+                    "created": "2025-08-02T03:54:28.6989363Z",
+                    "modified": "2025-08-02T03:54:28.6989363Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:Function::api",
+                    "custom": false,
+                    "type": "sst:aws:Function",
+                    "parent": "urn:pulumi:staging::inventario::pulumi:pulumi:Stack::inventario-staging",
+                    "created": "2025-08-02T03:54:28.7071456Z",
+                    "modified": "2025-08-02T03:54:28.7071456Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:CDN::webCdn",
+                    "custom": false,
+                    "type": "sst:aws:CDN",
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:StaticSite::web",
+                    "created": "2025-08-02T03:54:28.7131531Z",
+                    "modified": "2025-08-02T03:54:28.7131531Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket::webAssets",
+                    "custom": false,
+                    "type": "sst:aws:Bucket",
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:StaticSite::web",
+                    "created": "2025-08-02T03:54:28.7226673Z",
+                    "modified": "2025-08-02T03:54:28.7226673Z"
+                }
+            ],
+            "metadata": {}
+        }
+    }
+}

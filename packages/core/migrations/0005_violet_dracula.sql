@@ -1,0 +1,1 @@
+ALTER TABLE "clothe" ADD COLUMN "material" varchar(100) NOT NULL;

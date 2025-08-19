@@ -1,0 +1,25 @@
+{
+  "name": "inventario",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "sst": "sst --stage $STAGE"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@types/bun": "latest",
+    "autoprefixer": "^10.4.21",
+    "dotenv": "^17.2.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "expo-camera": "~16.0.18",
+    "sst": "ion"
+  },
+  "private": true
+}

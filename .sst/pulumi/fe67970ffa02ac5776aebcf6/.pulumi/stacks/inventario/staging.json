@@ -1,0 +1,266 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "organization/inventario/staging",
+        "latest": {
+            "manifest": {
+                "time": "2025-08-01T23:00:28.5970571-05:00",
+                "magic": "77be084e65c763fde87b290a0a6ba5aaacad687cde41d20d76768df34b0db77a",
+                "version": "v3.146.0"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:Csx1S60sRD4=:v1:c5oeMFVsXMPE25on:uG3Nx5Hf10uBpcCnHXIqRYGPiVXwBQ=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:staging::inventario::pulumi:pulumi:Stack::inventario-staging",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack",
+                    "created": "2025-08-02T03:51:33.6868399Z",
+                    "modified": "2025-08-02T03:51:33.6868399Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:Function::api",
+                    "custom": false,
+                    "type": "sst:aws:Function",
+                    "parent": "urn:pulumi:staging::inventario::pulumi:pulumi:Stack::inventario-staging",
+                    "created": "2025-08-02T03:54:28.7071456Z",
+                    "modified": "2025-08-02T03:54:28.7071456Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:sst:LinkRef::apiLinkRef",
+                    "custom": false,
+                    "type": "sst:sst:LinkRef",
+                    "parent": "urn:pulumi:staging::inventario::pulumi:pulumi:Stack::inventario-staging",
+                    "created": "2025-08-02T03:51:41.7635625Z",
+                    "modified": "2025-08-02T03:51:41.7635625Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::pulumi:providers:aws::default_6_66_2",
+                    "custom": true,
+                    "id": "86a6d9c9-4e6e-4273-8a9b-245f986672b2",
+                    "type": "pulumi:providers:aws",
+                    "inputs": {
+                        "__internal": {},
+                        "defaultTags": "{\"tags\":{\"sst:app\":\"inventario\",\"sst:stage\":\"staging\"}}",
+                        "region": "us-east-1",
+                        "skipCredentialsValidation": "false",
+                        "skipRegionValidation": "true",
+                        "version": "6.66.2"
+                    },
+                    "outputs": {
+                        "defaultTags": "{\"tags\":{\"sst:app\":\"inventario\",\"sst:stage\":\"staging\"}}",
+                        "region": "us-east-1",
+                        "skipCredentialsValidation": "false",
+                        "skipRegionValidation": "true",
+                        "version": "6.66.2"
+                    },
+                    "created": "2025-08-02T03:54:28.6888125Z",
+                    "modified": "2025-08-02T03:54:28.6888125Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::pulumi:providers:random::default_4_16_6",
+                    "custom": true,
+                    "id": "90615d89-3138-4d05-8f4a-7c038ba283bc",
+                    "type": "pulumi:providers:random",
+                    "inputs": {
+                        "__internal": {},
+                        "version": "4.16.6"
+                    },
+                    "outputs": {
+                        "version": "4.16.6"
+                    },
+                    "created": "2025-08-02T03:55:12.1277669Z",
+                    "modified": "2025-08-02T03:55:12.1277669Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::random:index/randomBytes:RandomBytes::LambdaEncryptionKey",
+                    "custom": true,
+                    "id": "gZ16rICG7oK49dyIUAeU2BNscGJ6+JgA74oSHL5Irhk=",
+                    "type": "random:index/randomBytes:RandomBytes",
+                    "inputs": {
+                        "length": 32
+                    },
+                    "outputs": {
+                        "base64": {
+                            "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                            "ciphertext": "v1:teJcUVWjZu2g6Q8m:l/HePDI0C4/DsSJItOyPHNdjaD9xKGX1LPDFe1tCUee22uIyYCcr5O3oTVIp74YcRRSsEstypN3eA5qQvoY="
+                        },
+                        "hex": {
+                            "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                            "ciphertext": "v1:2GAxzm5iNpnK/gdF:Qpwp/vNMKQSYST/Bz6dgZbmTxNMEbMtjHJ7Q0B1Gd0G0K2eG0xzHRSfkU79lmulCFHMKb2vdXA9eaMNezMZp+C5XGV5jUEL4yV1E++Eb6J1L3w=="
+                        },
+                        "length": 32
+                    },
+                    "parent": "urn:pulumi:staging::inventario::pulumi:pulumi:Stack::inventario-staging",
+                    "provider": "urn:pulumi:staging::inventario::pulumi:providers:random::default_4_16_6::90615d89-3138-4d05-8f4a-7c038ba283bc",
+                    "propertyDependencies": {
+                        "length": []
+                    },
+                    "additionalSecretOutputs": [
+                        "base64",
+                        "hex"
+                    ],
+                    "created": "2025-08-02T03:55:12.3662402Z",
+                    "modified": "2025-08-02T03:55:12.3662402Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:Function$aws:cloudwatch/logGroup:LogGroup::apiLogGroup",
+                    "custom": true,
+                    "id": "/aws/lambda/inventario-staging-apiFunction-tseknezh",
+                    "type": "aws:cloudwatch/logGroup:LogGroup",
+                    "inputs": {
+                        "__defaults": [
+                            "skipDestroy"
+                        ],
+                        "name": "/aws/lambda/inventario-staging-apiFunction-tseknezh",
+                        "retentionInDays": 30,
+                        "skipDestroy": false,
+                        "tags": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "tagsAll": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        }
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:logs:us-east-1:241291598884:log-group:/aws/lambda/inventario-staging-apiFunction-tseknezh",
+                        "id": "/aws/lambda/inventario-staging-apiFunction-tseknezh",
+                        "kmsKeyId": "",
+                        "logGroupClass": "STANDARD",
+                        "name": "/aws/lambda/inventario-staging-apiFunction-tseknezh",
+                        "namePrefix": "",
+                        "retentionInDays": 30,
+                        "skipDestroy": false,
+                        "tags": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "tagsAll": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        }
+                    },
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:Function::api",
+                    "provider": "urn:pulumi:staging::inventario::pulumi:providers:aws::default_6_66_2::86a6d9c9-4e6e-4273-8a9b-245f986672b2",
+                    "propertyDependencies": {
+                        "name": [],
+                        "retentionInDays": []
+                    },
+                    "created": "2025-08-02T03:55:13.1056181Z",
+                    "modified": "2025-08-02T03:55:13.1056181Z",
+                    "ignoreChanges": [
+                        "name"
+                    ]
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:Function$aws:iam/role:Role::apiRole",
+                    "custom": true,
+                    "id": "inventario-staging-apiRole-txwfdsvc",
+                    "type": "aws:iam/role:Role",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDetachPolicies",
+                            "maxSessionDuration",
+                            "path"
+                        ],
+                        "assumeRolePolicy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Action\": \"sts:AssumeRole\",\n      \"Principal\": {\n        \"AWS\": \"arn:aws:iam::241291598884:root\",\n        \"Service\": \"lambda.amazonaws.com\"\n      }\n    }\n  ]\n}",
+                        "forceDetachPolicies": false,
+                        "inlinePolicies": [],
+                        "managedPolicyArns": [
+                            "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                        ],
+                        "maxSessionDuration": 3600,
+                        "name": "inventario-staging-apiRole-txwfdsvc",
+                        "path": "/",
+                        "tags": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "tagsAll": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        }
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:iam::241291598884:role/inventario-staging-apiRole-txwfdsvc",
+                        "assumeRolePolicy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::241291598884:root\",\"Service\":\"lambda.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+                        "createDate": "2025-08-02T03:55:13Z",
+                        "description": "",
+                        "forceDetachPolicies": false,
+                        "id": "inventario-staging-apiRole-txwfdsvc",
+                        "inlinePolicies": [],
+                        "managedPolicyArns": [
+                            "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                        ],
+                        "maxSessionDuration": 3600,
+                        "name": "inventario-staging-apiRole-txwfdsvc",
+                        "namePrefix": "",
+                        "path": "/",
+                        "permissionsBoundary": "",
+                        "tags": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "tagsAll": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "uniqueId": "AROATQLQZTQSLXFSL4TZS"
+                    },
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:Function::api",
+                    "provider": "urn:pulumi:staging::inventario::pulumi:providers:aws::default_6_66_2::86a6d9c9-4e6e-4273-8a9b-245f986672b2",
+                    "propertyDependencies": {
+                        "assumeRolePolicy": [],
+                        "inlinePolicies": [],
+                        "managedPolicyArns": [],
+                        "name": []
+                    },
+                    "created": "2025-08-02T03:55:13.4433489Z",
+                    "modified": "2025-08-02T03:55:13.4433489Z",
+                    "ignoreChanges": [
+                        "name"
+                    ]
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:StaticSite::web",
+                    "custom": false,
+                    "type": "sst:aws:StaticSite",
+                    "parent": "urn:pulumi:staging::inventario::pulumi:pulumi:Stack::inventario-staging",
+                    "created": "2025-08-02T03:54:05.1654962Z",
+                    "modified": "2025-08-02T03:54:05.1654962Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:sst:LinkRef::webLinkRef",
+                    "custom": false,
+                    "type": "sst:sst:LinkRef",
+                    "parent": "urn:pulumi:staging::inventario::pulumi:pulumi:Stack::inventario-staging",
+                    "created": "2025-08-02T03:54:28.6989363Z",
+                    "modified": "2025-08-02T03:54:28.6989363Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:CDN::webCdn",
+                    "custom": false,
+                    "type": "sst:aws:CDN",
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:StaticSite::web",
+                    "created": "2025-08-02T03:54:28.7131531Z",
+                    "modified": "2025-08-02T03:54:28.7131531Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket::webAssets",
+                    "custom": false,
+                    "type": "sst:aws:Bucket",
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:StaticSite::web",
+                    "created": "2025-08-02T03:54:28.7226673Z",
+                    "modified": "2025-08-02T03:54:28.7226673Z"
+                }
+            ],
+            "metadata": {}
+        }
+    }
+}

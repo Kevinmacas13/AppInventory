@@ -1,0 +1,1856 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "organization/inventario/staging",
+        "latest": {
+            "manifest": {
+                "time": "2025-08-19T18:28:13.1067095-05:00",
+                "magic": "77be084e65c763fde87b290a0a6ba5aaacad687cde41d20d76768df34b0db77a",
+                "version": "v3.146.0"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:7/XUQZhIOaM=:v1:HETw80Fuths7LZSt:lXV9bI5MCDC1tnuTH87SAQ3jgsF7vA=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:staging::inventario::pulumi:pulumi:Stack::inventario-staging",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack",
+                    "outputs": {
+                        "_protect": false,
+                        "api": "https://zf2diku5sbjcj3zyenbqhzzeyq0nnnvm.lambda-url.us-east-1.on.aws/",
+                        "web": "https://d31whwn9krmyev.cloudfront.net"
+                    },
+                    "created": "2025-08-02T03:51:33.6868399Z",
+                    "modified": "2025-08-02T03:51:33.6868399Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:sst:LinkRef::webLinkRef",
+                    "custom": false,
+                    "type": "sst:sst:LinkRef",
+                    "outputs": {
+                        "properties": {
+                            "type": "sst.aws.StaticSite",
+                            "url": "https://d31whwn9krmyev.cloudfront.net"
+                        },
+                        "target": "web"
+                    },
+                    "parent": "urn:pulumi:staging::inventario::pulumi:pulumi:Stack::inventario-staging",
+                    "created": "2025-08-02T14:42:16.3449553Z",
+                    "modified": "2025-08-02T14:42:16.3449553Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:StaticSite::web",
+                    "custom": false,
+                    "type": "sst:aws:StaticSite",
+                    "outputs": {
+                        "_dev": {
+                            "autostart": true,
+                            "command": "npm run dev",
+                            "directory": "apps/inventario-app/dist",
+                            "environment": {}
+                        },
+                        "_hint": "https://d31whwn9krmyev.cloudfront.net",
+                        "_metadata": {
+                            "environment": {},
+                            "mode": "deployed",
+                            "path": "apps/inventario-app/dist",
+                            "url": "https://d31whwn9krmyev.cloudfront.net"
+                        }
+                    },
+                    "parent": "urn:pulumi:staging::inventario::pulumi:pulumi:Stack::inventario-staging",
+                    "created": "2025-08-02T14:42:19.2239977Z",
+                    "modified": "2025-08-02T14:42:19.2239977Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:Function::api",
+                    "custom": false,
+                    "type": "sst:aws:Function",
+                    "outputs": {
+                        "_hint": "https://zf2diku5sbjcj3zyenbqhzzeyq0nnnvm.lambda-url.us-east-1.on.aws/",
+                        "_metadata": {
+                            "dev": false,
+                            "handler": "apps/api/handler.handler"
+                        }
+                    },
+                    "parent": "urn:pulumi:staging::inventario::pulumi:pulumi:Stack::inventario-staging",
+                    "created": "2025-08-02T03:54:28.7071456Z",
+                    "modified": "2025-08-02T03:54:28.7071456Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:sst:LinkRef::apiLinkRef",
+                    "custom": false,
+                    "type": "sst:sst:LinkRef",
+                    "outputs": {
+                        "include": [
+                            {
+                                "actions": [
+                                    "lambda:InvokeFunction"
+                                ],
+                                "resources": [
+                                    {
+                                        "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                                        "ciphertext": "v1:l+3XqQdfTn61L+XZ:KX3ElFJWTvYqN7/PKiP/sxB0b2QJGqqTZN/tg+0pLJnP7uDDtXARortmHBI4/lEn8kP/qRTjZMlwjHffTUmEuB20wxu+u5NyMks3ENFgf4m4b02qq3cSX6xUTZDTdn7eGrGF8UjSlTE="
+                                    }
+                                ],
+                                "type": "aws.permission"
+                            }
+                        ],
+                        "properties": {
+                            "name": {
+                                "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                                "ciphertext": "v1:0184KT3hkp//hn7H:C0Bh4fRyCBdhNOnkk+XZpkq2W+5jJDr/bdwQgk77AYgoixJo5BnDy/pvVaCF3BpCGUdZi8yz0iMH"
+                            },
+                            "type": "sst.aws.Function",
+                            "url": "https://zf2diku5sbjcj3zyenbqhzzeyq0nnnvm.lambda-url.us-east-1.on.aws/"
+                        },
+                        "target": "api"
+                    },
+                    "parent": "urn:pulumi:staging::inventario::pulumi:pulumi:Stack::inventario-staging",
+                    "created": "2025-08-02T03:51:41.7635625Z",
+                    "modified": "2025-08-02T03:51:41.7635625Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::pulumi:providers:aws::default_6_66_2",
+                    "custom": true,
+                    "id": "86a6d9c9-4e6e-4273-8a9b-245f986672b2",
+                    "type": "pulumi:providers:aws",
+                    "inputs": {
+                        "__internal": {},
+                        "defaultTags": "{\"tags\":{\"sst:app\":\"inventario\",\"sst:stage\":\"staging\"}}",
+                        "region": "us-east-1",
+                        "skipCredentialsValidation": "false",
+                        "skipRegionValidation": "true",
+                        "version": "6.66.2"
+                    },
+                    "outputs": {
+                        "defaultTags": "{\"tags\":{\"sst:app\":\"inventario\",\"sst:stage\":\"staging\"}}",
+                        "region": "us-east-1",
+                        "skipCredentialsValidation": "false",
+                        "skipRegionValidation": "true",
+                        "version": "6.66.2"
+                    },
+                    "created": "2025-08-02T03:54:28.6888125Z",
+                    "modified": "2025-08-02T03:54:28.6888125Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:CDN::webCdn",
+                    "custom": false,
+                    "type": "sst:aws:CDN",
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:StaticSite::web",
+                    "created": "2025-08-02T14:42:19.6297206Z",
+                    "modified": "2025-08-02T14:42:19.6297206Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket::webAssets",
+                    "custom": false,
+                    "type": "sst:aws:Bucket",
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:StaticSite::web",
+                    "created": "2025-08-02T14:42:19.6384497Z",
+                    "modified": "2025-08-02T14:42:19.6384497Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::pulumi:providers:random::default_4_16_6",
+                    "custom": true,
+                    "id": "90615d89-3138-4d05-8f4a-7c038ba283bc",
+                    "type": "pulumi:providers:random",
+                    "inputs": {
+                        "__internal": {},
+                        "version": "4.16.6"
+                    },
+                    "outputs": {
+                        "version": "4.16.6"
+                    },
+                    "created": "2025-08-02T03:55:12.1277669Z",
+                    "modified": "2025-08-02T03:55:12.1277669Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::random:index/randomBytes:RandomBytes::LambdaEncryptionKey",
+                    "custom": true,
+                    "id": "gZ16rICG7oK49dyIUAeU2BNscGJ6+JgA74oSHL5Irhk=",
+                    "type": "random:index/randomBytes:RandomBytes",
+                    "inputs": {
+                        "length": 32
+                    },
+                    "outputs": {
+                        "base64": {
+                            "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                            "ciphertext": "v1:6NvHjvjFLLjQZI46:KnhSXrCLpQW/dwUCaKi64NrMDWMzTLbJDbknmtP7jHRs1h+ZDh38Sl3ceOLE5lpELxfDVlGvMJx0up+U8VE="
+                        },
+                        "hex": {
+                            "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                            "ciphertext": "v1:zFq0q9aWjiXub6G4:mzqOYqoz0LTr/l80KlAr6ceGyU2cC2OlQBCUNXzLd6x6t8fYiuZ2REdkszyjzHqT47w0n3+h1cuO7eC/1ReGPGakW1f3Virm+nUTW8nCyNC58A=="
+                        },
+                        "length": 32
+                    },
+                    "parent": "urn:pulumi:staging::inventario::pulumi:pulumi:Stack::inventario-staging",
+                    "provider": "urn:pulumi:staging::inventario::pulumi:providers:random::default_4_16_6::90615d89-3138-4d05-8f4a-7c038ba283bc",
+                    "propertyDependencies": {
+                        "length": []
+                    },
+                    "additionalSecretOutputs": [
+                        "base64",
+                        "hex"
+                    ],
+                    "created": "2025-08-02T03:55:12.3662402Z",
+                    "modified": "2025-08-02T03:55:12.3662402Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:StaticSite$aws:cloudfront/keyValueStore:KeyValueStore::webKvStore",
+                    "custom": true,
+                    "id": "inventario-staging-webKvStore-ewsrrarw",
+                    "type": "aws:cloudfront/keyValueStore:KeyValueStore",
+                    "inputs": {
+                        "name": "inventario-staging-webKvStore-ewsrrarw"
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:cloudfront::241291598884:key-value-store/31cc2cb4-3800-4760-85bd-b1b408ce7125",
+                        "etag": "E3UN6WX5RRO2AG",
+                        "id": "inventario-staging-webKvStore-ewsrrarw",
+                        "lastModifiedTime": "2025-08-02T14:43:38Z",
+                        "name": "inventario-staging-webKvStore-ewsrrarw"
+                    },
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:StaticSite::web",
+                    "provider": "urn:pulumi:staging::inventario::pulumi:providers:aws::default_6_66_2::86a6d9c9-4e6e-4273-8a9b-245f986672b2",
+                    "propertyDependencies": {
+                        "name": []
+                    },
+                    "created": "2025-08-02T14:43:38.6951108Z",
+                    "modified": "2025-08-02T14:43:38.6951108Z",
+                    "ignoreChanges": [
+                        "name"
+                    ]
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:Function$aws:cloudwatch/logGroup:LogGroup::apiLogGroup",
+                    "custom": true,
+                    "id": "/aws/lambda/inventario-staging-apiFunction-tseknezh",
+                    "type": "aws:cloudwatch/logGroup:LogGroup",
+                    "inputs": {
+                        "__defaults": [
+                            "skipDestroy"
+                        ],
+                        "name": "/aws/lambda/inventario-staging-apiFunction-tseknezh",
+                        "retentionInDays": 30,
+                        "skipDestroy": false,
+                        "tags": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "tagsAll": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        }
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:logs:us-east-1:241291598884:log-group:/aws/lambda/inventario-staging-apiFunction-tseknezh",
+                        "id": "/aws/lambda/inventario-staging-apiFunction-tseknezh",
+                        "kmsKeyId": "",
+                        "logGroupClass": "STANDARD",
+                        "name": "/aws/lambda/inventario-staging-apiFunction-tseknezh",
+                        "namePrefix": "",
+                        "retentionInDays": 30,
+                        "skipDestroy": false,
+                        "tags": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "tagsAll": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        }
+                    },
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:Function::api",
+                    "provider": "urn:pulumi:staging::inventario::pulumi:providers:aws::default_6_66_2::86a6d9c9-4e6e-4273-8a9b-245f986672b2",
+                    "propertyDependencies": {
+                        "name": [],
+                        "retentionInDays": []
+                    },
+                    "created": "2025-08-02T03:55:13.1056181Z",
+                    "modified": "2025-08-02T03:55:13.1056181Z",
+                    "ignoreChanges": [
+                        "name"
+                    ]
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket$aws:s3/bucketV2:BucketV2::webAssetsBucket",
+                    "custom": true,
+                    "id": "inventario-staging-webassetsbucket-rzscnzou",
+                    "type": "aws:s3/bucketV2:BucketV2",
+                    "inputs": {
+                        "__defaults": [],
+                        "bucket": "inventario-staging-webassetsbucket-rzscnzou",
+                        "forceDestroy": true,
+                        "tags": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "tagsAll": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        }
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":3600000000000,\"read\":1200000000000,\"update\":1200000000000}}",
+                        "accelerationStatus": "",
+                        "acl": null,
+                        "arn": "arn:aws:s3:::inventario-staging-webassetsbucket-rzscnzou",
+                        "bucket": "inventario-staging-webassetsbucket-rzscnzou",
+                        "bucketDomainName": "inventario-staging-webassetsbucket-rzscnzou.s3.amazonaws.com",
+                        "bucketPrefix": "",
+                        "bucketRegionalDomainName": "inventario-staging-webassetsbucket-rzscnzou.s3.us-east-1.amazonaws.com",
+                        "corsRules": [],
+                        "forceDestroy": true,
+                        "grants": [
+                            {
+                                "id": "e449ec0f436e905f3da043b93c8cf9c809b83f13a6b528d3290a92337d0380a5",
+                                "permissions": [
+                                    "FULL_CONTROL"
+                                ],
+                                "type": "CanonicalUser",
+                                "uri": ""
+                            }
+                        ],
+                        "hostedZoneId": "Z3AQBSTGFYJSTF",
+                        "id": "inventario-staging-webassetsbucket-rzscnzou",
+                        "lifecycleRules": [],
+                        "loggings": [],
+                        "objectLockConfiguration": null,
+                        "objectLockEnabled": false,
+                        "policy": "",
+                        "region": "us-east-1",
+                        "replicationConfigurations": [],
+                        "requestPayer": "BucketOwner",
+                        "serverSideEncryptionConfigurations": [
+                            {
+                                "rules": [
+                                    {
+                                        "applyServerSideEncryptionByDefaults": [
+                                            {
+                                                "kmsMasterKeyId": "",
+                                                "sseAlgorithm": "AES256"
+                                            }
+                                        ],
+                                        "bucketKeyEnabled": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "tags": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "tagsAll": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "versionings": [
+                            {
+                                "enabled": false,
+                                "mfaDelete": false
+                            }
+                        ],
+                        "websiteDomain": null,
+                        "websiteEndpoint": null,
+                        "websites": []
+                    },
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket::webAssets",
+                    "provider": "urn:pulumi:staging::inventario::pulumi:providers:aws::default_6_66_2::86a6d9c9-4e6e-4273-8a9b-245f986672b2",
+                    "propertyDependencies": {
+                        "bucket": [],
+                        "forceDestroy": []
+                    },
+                    "created": "2025-08-02T14:42:21.9303127Z",
+                    "modified": "2025-08-02T14:42:21.9303127Z",
+                    "ignoreChanges": [
+                        "bucket"
+                    ]
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:StaticSite$aws:cloudfront/function:Function::webCloudfrontFunctionRequest",
+                    "custom": true,
+                    "id": "inventario-staging-webCloudfrontFunctionRequest-zubowshx",
+                    "type": "aws:cloudfront/function:Function",
+                    "inputs": {
+                        "__defaults": [
+                            "publish"
+                        ],
+                        "code": "\nimport cf from \"cloudfront\";\nasync function handler(event) {\n  \n  \n  \nasync function routeSite(kvNamespace, metadata) {\n  const baselessUri = metadata.base\n    ? event.request.uri.replace(metadata.base, \"\")\n    : event.request.uri;\n\n  // Route to S3 files\n  try {\n    // check using baselessUri b/c files are stored in the root\n    const u = decodeURIComponent(baselessUri);\n    const postfixes = u.endsWith(\"/\")\n      ? [\"index.html\"]\n      : [\"\", \".html\", \"/index.html\"];\n    const v = await Promise.any(postfixes.map(p => cf.kvs().get(kvNamespace + \":\" + u + p).then(v => p)));\n    // files are stored in a subdirectory, add it to the request uri\n    event.request.uri = metadata.s3.dir + event.request.uri + v;\n    setS3Origin(metadata.s3.domain);\n    return;\n  } catch (e) {}\n\n  // Route to S3 routes\n  if (metadata.s3 && metadata.s3.routes) {\n    for (var i=0, l=metadata.s3.routes.length; i<l; i++) {\n      const route = metadata.s3.routes[i];\n      if (baselessUri.startsWith(route)) {\n        event.request.uri = metadata.s3.dir + event.request.uri;\n        // uri ends with /, ie. /usage/ -> /usage/index.html\n        if (event.request.uri.endsWith(\"/\")) {\n          event.request.uri += \"index.html\";\n        }\n        // uri ends with non-file, ie. /usage -> /usage/index.html\n        else if (!event.request.uri.split(\"/\").pop().includes(\".\")) {\n          event.request.uri += \"/index.html\";\n        }\n        setS3Origin(metadata.s3.domain);\n        return;\n      }\n    }\n  }\n\n  // Route to S3 custom 404 (no servers)\n  if (metadata.custom404) {\n    event.request.uri = metadata.s3.dir + (metadata.base ? metadata.base : \"\") + metadata.custom404;\n    setS3Origin(metadata.s3.domain);\n    return;\n  }\n\n  // Route to image optimizer\n  if (metadata.image && baselessUri.startsWith(metadata.image.route)) {\n    setUrlOrigin(metadata.image.host);\n    return;\n  }\n\n  // Route to servers\n  if (metadata.servers){\n    event.request.headers[\"x-forwarded-host\"] = event.request.headers.host;\n    \n    for (var key in event.request.querystring) {\n      if (key.includes(\"/\")) {\n        event.request.querystring[encodeURIComponent(key)] = event.request.querystring[key];\n        delete event.request.querystring[key];\n      }\n    }\n    setNextjsGeoHeaders();\n    setNextjsCacheKey();\n    setUrlOrigin(findNearestServer(metadata.servers), metadata.origin);\n  }\n\n  function setNextjsGeoHeaders() {\n    \n    if(event.request.headers[\"cloudfront-viewer-city\"]) {\n      event.request.headers[\"x-open-next-city\"] = event.request.headers[\"cloudfront-viewer-city\"];\n    }\n    if(event.request.headers[\"cloudfront-viewer-country\"]) {\n      event.request.headers[\"x-open-next-country\"] = event.request.headers[\"cloudfront-viewer-country\"];\n    }\n    if(event.request.headers[\"cloudfront-viewer-region\"]) {\n      event.request.headers[\"x-open-next-region\"] = event.request.headers[\"cloudfront-viewer-region\"];\n    }\n    if(event.request.headers[\"cloudfront-viewer-latitude\"]) {\n      event.request.headers[\"x-open-next-latitude\"] = event.request.headers[\"cloudfront-viewer-latitude\"];\n    }\n    if(event.request.headers[\"cloudfront-viewer-longitude\"]) {\n      event.request.headers[\"x-open-next-longitude\"] = event.request.headers[\"cloudfront-viewer-longitude\"];\n    }\n  }\n\n  function setNextjsCacheKey() {\n    \n    var cacheKey = \"\";\n    if (event.request.uri.startsWith(\"/_next/image\")) {\n      cacheKey = getHeader(\"accept\");\n    } else {\n      cacheKey =\n        getHeader(\"rsc\") +\n        getHeader(\"next-router-prefetch\") +\n        getHeader(\"next-router-state-tree\") +\n        getHeader(\"next-url\") +\n        getHeader(\"x-prerender-revalidate\");\n    }\n    if (event.request.cookies[\"__prerender_bypass\"]) {\n      cacheKey += event.request.cookies[\"__prerender_bypass\"]\n        ? event.request.cookies[\"__prerender_bypass\"].value\n        : \"\";\n    }\n    var crypto = require(\"crypto\");\n    var hashedKey = crypto.createHash(\"md5\").update(cacheKey).digest(\"hex\");\n    event.request.headers[\"x-open-next-cache-key\"] = { value: hashedKey };\n  }\n\n  function getHeader(key) {\n    var header = event.request.headers[key];\n    if (header) {\n      if (header.multiValue) {\n        return header.multiValue.map((header) => header.value).join(\",\");\n      }\n      if (header.value) {\n        return header.value;\n      }\n    }\n    return \"\";\n  }\n\n  function findNearestServer(servers) {\n    if (servers.length === 1) return servers[0][0];\n\n    const h = event.request.headers;\n    const lat = h[\"cloudfront-viewer-latitude\"] && h[\"cloudfront-viewer-latitude\"].value;\n    const lon = h[\"cloudfront-viewer-longitude\"] && h[\"cloudfront-viewer-longitude\"].value;\n    if (!lat || !lon) return servers[0][0];\n\n    return servers\n      .map((s) => ({\n        distance: haversineDistance(lat, lon, s[1], s[2]),\n        host: s[0],\n      }))\n      .sort((a, b) => a.distance - b.distance)[0]\n      .host;\n  }\n\n  function haversineDistance(lat1, lon1, lat2, lon2) {\n    const toRad = angle => angle * Math.PI / 180;\n    const radLat1 = toRad(lat1);\n    const radLat2 = toRad(lat2);\n    const dLat = toRad(lat2 - lat1);\n    const dLon = toRad(lon2 - lon1);\n    const a = Math.sin(dLat / 2) ** 2 + Math.cos(radLat1) * Math.cos(radLat2) * Math.sin(dLon / 2) ** 2;\n    return 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));\n  }\n}\n\nfunction setUrlOrigin(urlHost, override) {\n  event.request.headers[\"x-forwarded-host\"] = event.request.headers.host;\n  const origin = {\n    domainName: urlHost,\n    customOriginConfig: {\n      port: 443,\n      protocol: \"https\",\n      sslProtocols: [\"TLSv1.2\"],\n    },\n    originAccessControlConfig: {\n      enabled: false,\n    }\n  };\n  override = override ?? {};\n  if (override.protocol === \"http\") {\n    delete origin.customOriginConfig;\n  }\n  if (override.connectionAttempts) {\n    origin.connectionAttempts = override.connectionAttempts;\n  }\n  if (override.timeouts) {\n    origin.timeouts = override.timeouts;\n  }\n  cf.updateRequestOrigin(origin);\n}\n\nfunction setS3Origin(s3Domain, override) {\n  delete event.request.headers[\"Cookies\"];\n  delete event.request.headers[\"cookies\"];\n  delete event.request.cookies;\n\n  const origin = {\n    domainName: s3Domain,\n    originAccessControlConfig: {\n      enabled: true,\n      signingBehavior: \"always\",\n      signingProtocol: \"sigv4\",\n      originType: \"s3\",\n    }\n  };\n  override = override ?? {};\n  if (override.connectionAttempts) {\n    origin.connectionAttempts = override.connectionAttempts;\n  }\n  if (override.timeouts) {\n    origin.timeouts = override.timeouts;\n  }\n  cf.updateRequestOrigin(origin);\n}\n\n  const kvNamespace = \"7f98\";\n\n  // Load metadata\n  let metadata;\n  try {\n    const v = await cf.kvs().get(kvNamespace + \":metadata\");\n    metadata = JSON.parse(v);\n  } catch (e) {}\n\n  await routeSite(kvNamespace, metadata);\n  return event.request;\n}",
+                        "keyValueStoreAssociations": [
+                            "arn:aws:cloudfront::241291598884:key-value-store/31cc2cb4-3800-4760-85bd-b1b408ce7125"
+                        ],
+                        "name": "inventario-staging-webCloudfrontFunctionRequest-zubowshx",
+                        "publish": true,
+                        "runtime": "cloudfront-js-2.0"
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:cloudfront::241291598884:function/inventario-staging-webCloudfrontFunctionRequest-zubowshx",
+                        "code": "\nimport cf from \"cloudfront\";\nasync function handler(event) {\n  \n  \n  \nasync function routeSite(kvNamespace, metadata) {\n  const baselessUri = metadata.base\n    ? event.request.uri.replace(metadata.base, \"\")\n    : event.request.uri;\n\n  // Route to S3 files\n  try {\n    // check using baselessUri b/c files are stored in the root\n    const u = decodeURIComponent(baselessUri);\n    const postfixes = u.endsWith(\"/\")\n      ? [\"index.html\"]\n      : [\"\", \".html\", \"/index.html\"];\n    const v = await Promise.any(postfixes.map(p => cf.kvs().get(kvNamespace + \":\" + u + p).then(v => p)));\n    // files are stored in a subdirectory, add it to the request uri\n    event.request.uri = metadata.s3.dir + event.request.uri + v;\n    setS3Origin(metadata.s3.domain);\n    return;\n  } catch (e) {}\n\n  // Route to S3 routes\n  if (metadata.s3 && metadata.s3.routes) {\n    for (var i=0, l=metadata.s3.routes.length; i<l; i++) {\n      const route = metadata.s3.routes[i];\n      if (baselessUri.startsWith(route)) {\n        event.request.uri = metadata.s3.dir + event.request.uri;\n        // uri ends with /, ie. /usage/ -> /usage/index.html\n        if (event.request.uri.endsWith(\"/\")) {\n          event.request.uri += \"index.html\";\n        }\n        // uri ends with non-file, ie. /usage -> /usage/index.html\n        else if (!event.request.uri.split(\"/\").pop().includes(\".\")) {\n          event.request.uri += \"/index.html\";\n        }\n        setS3Origin(metadata.s3.domain);\n        return;\n      }\n    }\n  }\n\n  // Route to S3 custom 404 (no servers)\n  if (metadata.custom404) {\n    event.request.uri = metadata.s3.dir + (metadata.base ? metadata.base : \"\") + metadata.custom404;\n    setS3Origin(metadata.s3.domain);\n    return;\n  }\n\n  // Route to image optimizer\n  if (metadata.image && baselessUri.startsWith(metadata.image.route)) {\n    setUrlOrigin(metadata.image.host);\n    return;\n  }\n\n  // Route to servers\n  if (metadata.servers){\n    event.request.headers[\"x-forwarded-host\"] = event.request.headers.host;\n    \n    for (var key in event.request.querystring) {\n      if (key.includes(\"/\")) {\n        event.request.querystring[encodeURIComponent(key)] = event.request.querystring[key];\n        delete event.request.querystring[key];\n      }\n    }\n    setNextjsGeoHeaders();\n    setNextjsCacheKey();\n    setUrlOrigin(findNearestServer(metadata.servers), metadata.origin);\n  }\n\n  function setNextjsGeoHeaders() {\n    \n    if(event.request.headers[\"cloudfront-viewer-city\"]) {\n      event.request.headers[\"x-open-next-city\"] = event.request.headers[\"cloudfront-viewer-city\"];\n    }\n    if(event.request.headers[\"cloudfront-viewer-country\"]) {\n      event.request.headers[\"x-open-next-country\"] = event.request.headers[\"cloudfront-viewer-country\"];\n    }\n    if(event.request.headers[\"cloudfront-viewer-region\"]) {\n      event.request.headers[\"x-open-next-region\"] = event.request.headers[\"cloudfront-viewer-region\"];\n    }\n    if(event.request.headers[\"cloudfront-viewer-latitude\"]) {\n      event.request.headers[\"x-open-next-latitude\"] = event.request.headers[\"cloudfront-viewer-latitude\"];\n    }\n    if(event.request.headers[\"cloudfront-viewer-longitude\"]) {\n      event.request.headers[\"x-open-next-longitude\"] = event.request.headers[\"cloudfront-viewer-longitude\"];\n    }\n  }\n\n  function setNextjsCacheKey() {\n    \n    var cacheKey = \"\";\n    if (event.request.uri.startsWith(\"/_next/image\")) {\n      cacheKey = getHeader(\"accept\");\n    } else {\n      cacheKey =\n        getHeader(\"rsc\") +\n        getHeader(\"next-router-prefetch\") +\n        getHeader(\"next-router-state-tree\") +\n        getHeader(\"next-url\") +\n        getHeader(\"x-prerender-revalidate\");\n    }\n    if (event.request.cookies[\"__prerender_bypass\"]) {\n      cacheKey += event.request.cookies[\"__prerender_bypass\"]\n        ? event.request.cookies[\"__prerender_bypass\"].value\n        : \"\";\n    }\n    var crypto = require(\"crypto\");\n    var hashedKey = crypto.createHash(\"md5\").update(cacheKey).digest(\"hex\");\n    event.request.headers[\"x-open-next-cache-key\"] = { value: hashedKey };\n  }\n\n  function getHeader(key) {\n    var header = event.request.headers[key];\n    if (header) {\n      if (header.multiValue) {\n        return header.multiValue.map((header) => header.value).join(\",\");\n      }\n      if (header.value) {\n        return header.value;\n      }\n    }\n    return \"\";\n  }\n\n  function findNearestServer(servers) {\n    if (servers.length === 1) return servers[0][0];\n\n    const h = event.request.headers;\n    const lat = h[\"cloudfront-viewer-latitude\"] && h[\"cloudfront-viewer-latitude\"].value;\n    const lon = h[\"cloudfront-viewer-longitude\"] && h[\"cloudfront-viewer-longitude\"].value;\n    if (!lat || !lon) return servers[0][0];\n\n    return servers\n      .map((s) => ({\n        distance: haversineDistance(lat, lon, s[1], s[2]),\n        host: s[0],\n      }))\n      .sort((a, b) => a.distance - b.distance)[0]\n      .host;\n  }\n\n  function haversineDistance(lat1, lon1, lat2, lon2) {\n    const toRad = angle => angle * Math.PI / 180;\n    const radLat1 = toRad(lat1);\n    const radLat2 = toRad(lat2);\n    const dLat = toRad(lat2 - lat1);\n    const dLon = toRad(lon2 - lon1);\n    const a = Math.sin(dLat / 2) ** 2 + Math.cos(radLat1) * Math.cos(radLat2) * Math.sin(dLon / 2) ** 2;\n    return 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));\n  }\n}\n\nfunction setUrlOrigin(urlHost, override) {\n  event.request.headers[\"x-forwarded-host\"] = event.request.headers.host;\n  const origin = {\n    domainName: urlHost,\n    customOriginConfig: {\n      port: 443,\n      protocol: \"https\",\n      sslProtocols: [\"TLSv1.2\"],\n    },\n    originAccessControlConfig: {\n      enabled: false,\n    }\n  };\n  override = override ?? {};\n  if (override.protocol === \"http\") {\n    delete origin.customOriginConfig;\n  }\n  if (override.connectionAttempts) {\n    origin.connectionAttempts = override.connectionAttempts;\n  }\n  if (override.timeouts) {\n    origin.timeouts = override.timeouts;\n  }\n  cf.updateRequestOrigin(origin);\n}\n\nfunction setS3Origin(s3Domain, override) {\n  delete event.request.headers[\"Cookies\"];\n  delete event.request.headers[\"cookies\"];\n  delete event.request.cookies;\n\n  const origin = {\n    domainName: s3Domain,\n    originAccessControlConfig: {\n      enabled: true,\n      signingBehavior: \"always\",\n      signingProtocol: \"sigv4\",\n      originType: \"s3\",\n    }\n  };\n  override = override ?? {};\n  if (override.connectionAttempts) {\n    origin.connectionAttempts = override.connectionAttempts;\n  }\n  if (override.timeouts) {\n    origin.timeouts = override.timeouts;\n  }\n  cf.updateRequestOrigin(origin);\n}\n\n  const kvNamespace = \"7f98\";\n\n  // Load metadata\n  let metadata;\n  try {\n    const v = await cf.kvs().get(kvNamespace + \":metadata\");\n    metadata = JSON.parse(v);\n  } catch (e) {}\n\n  await routeSite(kvNamespace, metadata);\n  return event.request;\n}",
+                        "comment": "",
+                        "etag": "ETVPDKIKX0DER",
+                        "id": "inventario-staging-webCloudfrontFunctionRequest-zubowshx",
+                        "keyValueStoreAssociations": [
+                            "arn:aws:cloudfront::241291598884:key-value-store/31cc2cb4-3800-4760-85bd-b1b408ce7125"
+                        ],
+                        "liveStageEtag": "ETVPDKIKX0DER",
+                        "name": "inventario-staging-webCloudfrontFunctionRequest-zubowshx",
+                        "publish": true,
+                        "runtime": "cloudfront-js-2.0",
+                        "status": "UNASSOCIATED"
+                    },
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:StaticSite::web",
+                    "dependencies": [
+                        "urn:pulumi:staging::inventario::sst:aws:StaticSite$aws:cloudfront/keyValueStore:KeyValueStore::webKvStore"
+                    ],
+                    "provider": "urn:pulumi:staging::inventario::pulumi:providers:aws::default_6_66_2::86a6d9c9-4e6e-4273-8a9b-245f986672b2",
+                    "propertyDependencies": {
+                        "code": [],
+                        "keyValueStoreAssociations": [
+                            "urn:pulumi:staging::inventario::sst:aws:StaticSite$aws:cloudfront/keyValueStore:KeyValueStore::webKvStore"
+                        ],
+                        "name": [],
+                        "runtime": []
+                    },
+                    "created": "2025-08-02T14:43:41.2897555Z",
+                    "modified": "2025-08-02T14:43:41.2897555Z",
+                    "ignoreChanges": [
+                        "name"
+                    ]
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket$aws:s3/bucketPublicAccessBlock:BucketPublicAccessBlock::webAssetsPublicAccessBlock",
+                    "custom": true,
+                    "id": "inventario-staging-webassetsbucket-rzscnzou",
+                    "type": "aws:s3/bucketPublicAccessBlock:BucketPublicAccessBlock",
+                    "inputs": {
+                        "__defaults": [],
+                        "blockPublicAcls": true,
+                        "blockPublicPolicy": true,
+                        "bucket": "inventario-staging-webassetsbucket-rzscnzou",
+                        "ignorePublicAcls": true,
+                        "restrictPublicBuckets": true
+                    },
+                    "outputs": {
+                        "blockPublicAcls": true,
+                        "blockPublicPolicy": true,
+                        "bucket": "inventario-staging-webassetsbucket-rzscnzou",
+                        "id": "inventario-staging-webassetsbucket-rzscnzou",
+                        "ignorePublicAcls": true,
+                        "restrictPublicBuckets": true
+                    },
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket::webAssets",
+                    "dependencies": [
+                        "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket$aws:s3/bucketV2:BucketV2::webAssetsBucket"
+                    ],
+                    "provider": "urn:pulumi:staging::inventario::pulumi:providers:aws::default_6_66_2::86a6d9c9-4e6e-4273-8a9b-245f986672b2",
+                    "propertyDependencies": {
+                        "blockPublicAcls": [],
+                        "blockPublicPolicy": [],
+                        "bucket": [
+                            "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket$aws:s3/bucketV2:BucketV2::webAssetsBucket"
+                        ],
+                        "ignorePublicAcls": [],
+                        "restrictPublicBuckets": []
+                    },
+                    "created": "2025-08-02T14:42:22.4599853Z",
+                    "modified": "2025-08-02T14:42:22.4599853Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket$aws:s3/bucketCorsConfigurationV2:BucketCorsConfigurationV2::webAssetsCors",
+                    "custom": true,
+                    "id": "inventario-staging-webassetsbucket-rzscnzou",
+                    "type": "aws:s3/bucketCorsConfigurationV2:BucketCorsConfigurationV2",
+                    "inputs": {
+                        "__defaults": [],
+                        "bucket": "inventario-staging-webassetsbucket-rzscnzou",
+                        "corsRules": [
+                            {
+                                "__defaults": [],
+                                "allowedHeaders": [
+                                    "*"
+                                ],
+                                "allowedMethods": [
+                                    "DELETE",
+                                    "GET",
+                                    "HEAD",
+                                    "POST",
+                                    "PUT"
+                                ],
+                                "allowedOrigins": [
+                                    "*"
+                                ],
+                                "maxAgeSeconds": 0
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "bucket": "inventario-staging-webassetsbucket-rzscnzou",
+                        "corsRules": [
+                            {
+                                "allowedHeaders": [
+                                    "*"
+                                ],
+                                "allowedMethods": [
+                                    "DELETE",
+                                    "GET",
+                                    "HEAD",
+                                    "POST",
+                                    "PUT"
+                                ],
+                                "allowedOrigins": [
+                                    "*"
+                                ],
+                                "exposeHeaders": [],
+                                "id": "",
+                                "maxAgeSeconds": 0
+                            }
+                        ],
+                        "expectedBucketOwner": "",
+                        "id": "inventario-staging-webassetsbucket-rzscnzou"
+                    },
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket::webAssets",
+                    "dependencies": [
+                        "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket$aws:s3/bucketV2:BucketV2::webAssetsBucket"
+                    ],
+                    "provider": "urn:pulumi:staging::inventario::pulumi:providers:aws::default_6_66_2::86a6d9c9-4e6e-4273-8a9b-245f986672b2",
+                    "propertyDependencies": {
+                        "bucket": [
+                            "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket$aws:s3/bucketV2:BucketV2::webAssetsBucket"
+                        ],
+                        "corsRules": []
+                    },
+                    "created": "2025-08-02T14:42:22.3519133Z",
+                    "modified": "2025-08-02T14:42:22.3519133Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket$aws:s3/bucketPolicy:BucketPolicy::webAssetsPolicy",
+                    "custom": true,
+                    "id": "inventario-staging-webassetsbucket-rzscnzou",
+                    "type": "aws:s3/bucketPolicy:BucketPolicy",
+                    "inputs": {
+                        "__defaults": [],
+                        "bucket": "inventario-staging-webassetsbucket-rzscnzou",
+                        "policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Action\": \"s3:GetObject\",\n      \"Resource\": \"arn:aws:s3:::inventario-staging-webassetsbucket-rzscnzou/*\",\n      \"Principal\": {\n        \"Service\": \"cloudfront.amazonaws.com\"\n      }\n    },\n    {\n      \"Effect\": \"Deny\",\n      \"Action\": \"s3:*\",\n      \"Resource\": [\n        \"arn:aws:s3:::inventario-staging-webassetsbucket-rzscnzou/*\",\n        \"arn:aws:s3:::inventario-staging-webassetsbucket-rzscnzou\"\n      ],\n      \"Principal\": \"*\",\n      \"Condition\": {\n        \"Bool\": {\n          \"aws:SecureTransport\": \"false\"\n        }\n      }\n    }\n  ]\n}"
+                    },
+                    "outputs": {
+                        "bucket": "inventario-staging-webassetsbucket-rzscnzou",
+                        "id": "inventario-staging-webassetsbucket-rzscnzou",
+                        "policy": "{\"Statement\":[{\"Action\":\"s3:GetObject\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudfront.amazonaws.com\"},\"Resource\":\"arn:aws:s3:::inventario-staging-webassetsbucket-rzscnzou/*\"},{\"Action\":\"s3:*\",\"Condition\":{\"Bool\":{\"aws:SecureTransport\":\"false\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":[\"arn:aws:s3:::inventario-staging-webassetsbucket-rzscnzou/*\",\"arn:aws:s3:::inventario-staging-webassetsbucket-rzscnzou\"]}],\"Version\":\"2012-10-17\"}"
+                    },
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket::webAssets",
+                    "dependencies": [
+                        "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket$aws:s3/bucketPublicAccessBlock:BucketPublicAccessBlock::webAssetsPublicAccessBlock",
+                        "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket$aws:s3/bucketV2:BucketV2::webAssetsBucket"
+                    ],
+                    "provider": "urn:pulumi:staging::inventario::pulumi:providers:aws::default_6_66_2::86a6d9c9-4e6e-4273-8a9b-245f986672b2",
+                    "propertyDependencies": {
+                        "bucket": [
+                            "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket$aws:s3/bucketV2:BucketV2::webAssetsBucket"
+                        ],
+                        "policy": [
+                            "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket$aws:s3/bucketV2:BucketV2::webAssetsBucket"
+                        ]
+                    },
+                    "created": "2025-08-02T14:42:22.8166406Z",
+                    "modified": "2025-08-02T14:42:22.8166406Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:CDN$aws:cloudfront/distribution:Distribution::webCdnDistribution",
+                    "custom": true,
+                    "id": "E148FX4BPVPDSH",
+                    "type": "aws:cloudfront/distribution:Distribution",
+                    "inputs": {
+                        "__defaults": [
+                            "httpVersion",
+                            "isIpv6Enabled",
+                            "priceClass",
+                            "retainOnDelete",
+                            "staging"
+                        ],
+                        "aliases": [],
+                        "comment": "web site",
+                        "defaultCacheBehavior": {
+                            "__defaults": [
+                                "minTtl"
+                            ],
+                            "allowedMethods": [
+                                "DELETE",
+                                "GET",
+                                "HEAD",
+                                "OPTIONS",
+                                "PATCH",
+                                "POST",
+                                "PUT"
+                            ],
+                            "cachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+                            "cachedMethods": [
+                                "GET",
+                                "HEAD"
+                            ],
+                            "compress": true,
+                            "functionAssociations": [
+                                {
+                                    "__defaults": [],
+                                    "eventType": "viewer-request",
+                                    "functionArn": "arn:aws:cloudfront::241291598884:function/inventario-staging-webCloudfrontFunctionRequest-zubowshx"
+                                }
+                            ],
+                            "minTtl": 0,
+                            "targetOriginId": "default",
+                            "viewerProtocolPolicy": "redirect-to-https"
+                        },
+                        "enabled": true,
+                        "httpVersion": "http2",
+                        "isIpv6Enabled": false,
+                        "origins": [
+                            {
+                                "__defaults": [
+                                    "connectionAttempts",
+                                    "connectionTimeout",
+                                    "originPath"
+                                ],
+                                "connectionAttempts": 3,
+                                "connectionTimeout": 10,
+                                "customOriginConfig": {
+                                    "__defaults": [
+                                        "originKeepaliveTimeout"
+                                    ],
+                                    "httpPort": 80,
+                                    "httpsPort": 443,
+                                    "originKeepaliveTimeout": 5,
+                                    "originProtocolPolicy": "https-only",
+                                    "originReadTimeout": 20,
+                                    "originSslProtocols": [
+                                        "TLSv1.2"
+                                    ]
+                                },
+                                "domainName": "placeholder.sst.dev",
+                                "originId": "default",
+                                "originPath": ""
+                            }
+                        ],
+                        "priceClass": "PriceClass_All",
+                        "restrictions": {
+                            "__defaults": [],
+                            "geoRestriction": {
+                                "__defaults": [],
+                                "restrictionType": "none"
+                            }
+                        },
+                        "retainOnDelete": false,
+                        "staging": false,
+                        "tags": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "tagsAll": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "viewerCertificate": {
+                            "__defaults": [
+                                "minimumProtocolVersion"
+                            ],
+                            "cloudfrontDefaultCertificate": true,
+                            "minimumProtocolVersion": "TLSv1"
+                        },
+                        "waitForDeployment": false
+                    },
+                    "outputs": {
+                        "__meta": "{\"schema_version\":\"1\"}",
+                        "aliases": null,
+                        "arn": "arn:aws:cloudfront::241291598884:distribution/E148FX4BPVPDSH",
+                        "callerReference": "terraform-20250802144341364900000001",
+                        "comment": "web site",
+                        "continuousDeploymentPolicyId": "",
+                        "customErrorResponses": [],
+                        "defaultCacheBehavior": {
+                            "allowedMethods": [
+                                "DELETE",
+                                "GET",
+                                "HEAD",
+                                "OPTIONS",
+                                "PATCH",
+                                "POST",
+                                "PUT"
+                            ],
+                            "cachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+                            "cachedMethods": [
+                                "GET",
+                                "HEAD"
+                            ],
+                            "compress": true,
+                            "defaultTtl": 0,
+                            "fieldLevelEncryptionId": "",
+                            "forwardedValues": null,
+                            "functionAssociations": [
+                                {
+                                    "eventType": "viewer-request",
+                                    "functionArn": "arn:aws:cloudfront::241291598884:function/inventario-staging-webCloudfrontFunctionRequest-zubowshx"
+                                }
+                            ],
+                            "lambdaFunctionAssociations": [],
+                            "maxTtl": 0,
+                            "minTtl": 0,
+                            "originRequestPolicyId": "",
+                            "realtimeLogConfigArn": "",
+                            "responseHeadersPolicyId": "",
+                            "smoothStreaming": false,
+                            "targetOriginId": "default",
+                            "trustedKeyGroups": [],
+                            "trustedSigners": [],
+                            "viewerProtocolPolicy": "redirect-to-https"
+                        },
+                        "defaultRootObject": "",
+                        "domainName": "d31whwn9krmyev.cloudfront.net",
+                        "enabled": true,
+                        "etag": "E1WOCX9AEGPDK6",
+                        "hostedZoneId": "Z2FDTNDATAQYW2",
+                        "httpVersion": "http2",
+                        "id": "E148FX4BPVPDSH",
+                        "inProgressValidationBatches": 0,
+                        "isIpv6Enabled": false,
+                        "lastModifiedTime": "2025-08-02 14:43:42.073 +0000 UTC",
+                        "loggingConfig": null,
+                        "orderedCacheBehaviors": [],
+                        "originGroups": [],
+                        "origins": [
+                            {
+                                "connectionAttempts": 3,
+                                "connectionTimeout": 10,
+                                "customHeaders": [],
+                                "customOriginConfig": {
+                                    "httpPort": 80,
+                                    "httpsPort": 443,
+                                    "originKeepaliveTimeout": 5,
+                                    "originProtocolPolicy": "https-only",
+                                    "originReadTimeout": 20,
+                                    "originSslProtocols": [
+                                        "TLSv1.2"
+                                    ]
+                                },
+                                "domainName": "placeholder.sst.dev",
+                                "originAccessControlId": "",
+                                "originId": "default",
+                                "originPath": "",
+                                "originShield": null,
+                                "s3OriginConfig": null,
+                                "vpcOriginConfig": null
+                            }
+                        ],
+                        "priceClass": "PriceClass_All",
+                        "restrictions": {
+                            "geoRestriction": {
+                                "locations": [],
+                                "restrictionType": "none"
+                            }
+                        },
+                        "retainOnDelete": false,
+                        "staging": false,
+                        "status": "InProgress",
+                        "tags": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "tagsAll": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "trustedKeyGroups": [
+                            {
+                                "enabled": false,
+                                "items": []
+                            }
+                        ],
+                        "trustedSigners": [
+                            {
+                                "enabled": false,
+                                "items": []
+                            }
+                        ],
+                        "viewerCertificate": {
+                            "acmCertificateArn": "",
+                            "cloudfrontDefaultCertificate": true,
+                            "iamCertificateId": "",
+                            "minimumProtocolVersion": "TLSv1",
+                            "sslSupportMethod": ""
+                        },
+                        "waitForDeployment": false,
+                        "webAclId": ""
+                    },
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:CDN::webCdn",
+                    "dependencies": [
+                        "urn:pulumi:staging::inventario::sst:aws:StaticSite$aws:cloudfront/function:Function::webCloudfrontFunctionRequest"
+                    ],
+                    "provider": "urn:pulumi:staging::inventario::pulumi:providers:aws::default_6_66_2::86a6d9c9-4e6e-4273-8a9b-245f986672b2",
+                    "propertyDependencies": {
+                        "aliases": [],
+                        "comment": [],
+                        "defaultCacheBehavior": [
+                            "urn:pulumi:staging::inventario::sst:aws:StaticSite$aws:cloudfront/function:Function::webCloudfrontFunctionRequest"
+                        ],
+                        "enabled": [],
+                        "origins": [],
+                        "restrictions": [],
+                        "viewerCertificate": [],
+                        "waitForDeployment": []
+                    },
+                    "created": "2025-08-02T14:43:42.5307031Z",
+                    "modified": "2025-08-02T14:43:42.5307031Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::pulumi:providers:pulumi-nodejs::default",
+                    "custom": true,
+                    "id": "83196946-6acd-4afe-ab8b-541a525d614e",
+                    "type": "pulumi:providers:pulumi-nodejs",
+                    "inputs": {
+                        "aws:defaultTags": "{\"tags\":{\"sst:app\":\"inventario\",\"sst:stage\":\"staging\"}}",
+                        "aws:region": "us-east-1"
+                    },
+                    "outputs": {
+                        "aws:defaultTags": "{\"tags\":{\"sst:app\":\"inventario\",\"sst:stage\":\"staging\"}}",
+                        "aws:region": "us-east-1"
+                    },
+                    "created": "2025-08-02T14:42:23.8404134Z",
+                    "modified": "2025-08-02T14:42:23.8404134Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:StaticSite$pulumi-nodejs:dynamic:Resource::webKvKeys.sst.aws.KvKeys",
+                    "custom": true,
+                    "id": "entries",
+                    "type": "pulumi-nodejs:dynamic:Resource",
+                    "inputs": {
+                        "__provider": "exports.handler = __f0;\n\nvar __provider_proto = {};\nObject.defineProperty(__f1, \"prototype\", { value: __provider_proto });\nObject.defineProperty(__provider_proto, \"constructor\", { configurable: true, writable: true, value: __f1 });\nObject.defineProperty(__provider_proto, \"name\", { configurable: true, writable: true, value: __f2 });\nObject.setPrototypeOf(__f4, global.Error);\nObject.defineProperty(__provider_proto, \"create\", { configurable: true, writable: true, value: __f3 });\nObject.defineProperty(__provider_proto, \"delete\", { configurable: true, writable: true, value: __f5 });\nObject.defineProperty(__provider_proto, \"update\", { configurable: true, writable: true, value: __f6 });\nObject.defineProperty(__provider_proto, \"read\", { configurable: true, writable: true, value: __f7 });\nObject.defineProperty(__provider_proto, \"diff\", { configurable: true, writable: true, value: __f8 });\nvar __provider = Object.create(__provider_proto);\n__provider.type = \"Aws.KvKeys\";\n\nfunction __f1(__0) {\n  return (function() {\n    with({ this: undefined, arguments: undefined }) {\n\nreturn function /*constructor*/(type) {\n      this.type = type;\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f2(__0) {\n  return (function() {\n    with({ this: undefined, arguments: undefined }) {\n\nreturn function /*name*/(action) {\n      return \"Resource.\" + this.type + \".\" + action;\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f4(__0) {\n  return (function() {\n    with({ __super: global.Error, this: undefined, arguments: undefined }) {\n\nreturn function /*constructor*/(method) {\n    __super.call(this, `Method \"${method}\" not found`);\n    this.method = method;\n};\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\nconst http = require(\"http\");\n\nfunction __call(__0, __1) {\n  return (function() {\n    with({ MethodNotFoundError: __f4, call: __call, this: undefined, arguments: undefined }) {\n\nreturn async function /*call*/(method, args) {\n    return new Promise((resolve, reject) => {\n      const url = new URL(process.env.SST_SERVER + \"/rpc\");\n      const options = {\n        hostname: url.hostname,\n        port: url.port,\n        path: url.pathname,\n        method: \"POST\",\n        headers: {\n          \"Content-Type\": \"application/json\"\n        }\n      };\n      const req = http.request(options, (res) => {\n        let data = \"\";\n        res.on(\"data\", (chunk) => {\n          data += chunk;\n        });\n        res.on(\"end\", () => {\n          if (res.statusCode !== 200) {\n            reject(new Error(`Failed to call RPC: ${data}`));\n            return;\n          }\n          try {\n            const json = JSON.parse(data);\n            if (json.error) {\n              if (json.error.startsWith(\"rpc: can't find\")) {\n                reject(new MethodNotFoundError(method));\n                return;\n              }\n              reject(new Error(json.error));\n              return;\n            }\n            resolve(json.result);\n          } catch (error) {\n            reject(new Error(`Failed to parse JSON: ${error.message}`));\n          }\n        });\n      });\n      req.on(\"error\", (error) => {\n        reject(error);\n      });\n      req.setTimeout(0);\n      const body = JSON.stringify({\n        jsonrpc: \"1.0\",\n        method,\n        params: [args]\n      });\n      req.write(body);\n      req.end();\n    });\n  };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f3(__0) {\n  return (function() {\n    with({ call: __call, this: undefined, arguments: undefined }) {\n\nreturn async function /*create*/(inputs) {\n      return call(this.name(\"Create\"), inputs);\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f5(__0, __1) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*delete*/(id, outs) {\n      return call(this.name(\"Delete\"), { id, outs }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return;\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f6(__0, __1, __2) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*update*/(id, olds, news) {\n      return call(this.name(\"Update\"), { id, olds, news }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError)\n          return {\n            id\n          };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f7(__0, __1) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*read*/(id, props) {\n      return call(this.name(\"Read\"), { id, props }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return { id, props };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f8(__0, __1, __2) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*diff*/(id, olds, news) {\n      return call(this.name(\"Diff\"), { id, olds, news }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return { id, olds, news };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f0() {\n  return (function() {\n    with({ provider: __provider, this: undefined, arguments: undefined }) {\n\nreturn () => provider;\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n",
+                        "entries": {
+                            "/+not-found.html": "s3",
+                            "/_sitemap.html": "s3",
+                            "/favicon.ico": "s3",
+                            "/index.html": "s3",
+                            "metadata": "{\"custom404\":\"/index.html\",\"s3\":{\"domain\":\"inventario-staging-webassetsbucket-rzscnzou.s3.us-east-1.amazonaws.com\",\"dir\":\"\",\"routes\":[\"/AddItemPage\",\"/assets\",\"/HomePage\",\"/InventoryPage\",\"/ReportsPage\",\"/_expo\"]}}"
+                        },
+                        "namespace": "7f98",
+                        "purge": true,
+                        "store": "arn:aws:cloudfront::241291598884:key-value-store/31cc2cb4-3800-4760-85bd-b1b408ce7125"
+                    },
+                    "outputs": {
+                        "__provider": "exports.handler = __f0;\n\nvar __provider_proto = {};\nObject.defineProperty(__f1, \"prototype\", { value: __provider_proto });\nObject.defineProperty(__provider_proto, \"constructor\", { configurable: true, writable: true, value: __f1 });\nObject.defineProperty(__provider_proto, \"name\", { configurable: true, writable: true, value: __f2 });\nObject.setPrototypeOf(__f4, global.Error);\nObject.defineProperty(__provider_proto, \"create\", { configurable: true, writable: true, value: __f3 });\nObject.defineProperty(__provider_proto, \"delete\", { configurable: true, writable: true, value: __f5 });\nObject.defineProperty(__provider_proto, \"update\", { configurable: true, writable: true, value: __f6 });\nObject.defineProperty(__provider_proto, \"read\", { configurable: true, writable: true, value: __f7 });\nObject.defineProperty(__provider_proto, \"diff\", { configurable: true, writable: true, value: __f8 });\nvar __provider = Object.create(__provider_proto);\n__provider.type = \"Aws.KvKeys\";\n\nfunction __f1(__0) {\n  return (function() {\n    with({ this: undefined, arguments: undefined }) {\n\nreturn function /*constructor*/(type) {\n      this.type = type;\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f2(__0) {\n  return (function() {\n    with({ this: undefined, arguments: undefined }) {\n\nreturn function /*name*/(action) {\n      return \"Resource.\" + this.type + \".\" + action;\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f4(__0) {\n  return (function() {\n    with({ __super: global.Error, this: undefined, arguments: undefined }) {\n\nreturn function /*constructor*/(method) {\n    __super.call(this, `Method \"${method}\" not found`);\n    this.method = method;\n};\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\nconst http = require(\"http\");\n\nfunction __call(__0, __1) {\n  return (function() {\n    with({ MethodNotFoundError: __f4, call: __call, this: undefined, arguments: undefined }) {\n\nreturn async function /*call*/(method, args) {\n    return new Promise((resolve, reject) => {\n      const url = new URL(process.env.SST_SERVER + \"/rpc\");\n      const options = {\n        hostname: url.hostname,\n        port: url.port,\n        path: url.pathname,\n        method: \"POST\",\n        headers: {\n          \"Content-Type\": \"application/json\"\n        }\n      };\n      const req = http.request(options, (res) => {\n        let data = \"\";\n        res.on(\"data\", (chunk) => {\n          data += chunk;\n        });\n        res.on(\"end\", () => {\n          if (res.statusCode !== 200) {\n            reject(new Error(`Failed to call RPC: ${data}`));\n            return;\n          }\n          try {\n            const json = JSON.parse(data);\n            if (json.error) {\n              if (json.error.startsWith(\"rpc: can't find\")) {\n                reject(new MethodNotFoundError(method));\n                return;\n              }\n              reject(new Error(json.error));\n              return;\n            }\n            resolve(json.result);\n          } catch (error) {\n            reject(new Error(`Failed to parse JSON: ${error.message}`));\n          }\n        });\n      });\n      req.on(\"error\", (error) => {\n        reject(error);\n      });\n      req.setTimeout(0);\n      const body = JSON.stringify({\n        jsonrpc: \"1.0\",\n        method,\n        params: [args]\n      });\n      req.write(body);\n      req.end();\n    });\n  };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f3(__0) {\n  return (function() {\n    with({ call: __call, this: undefined, arguments: undefined }) {\n\nreturn async function /*create*/(inputs) {\n      return call(this.name(\"Create\"), inputs);\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f5(__0, __1) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*delete*/(id, outs) {\n      return call(this.name(\"Delete\"), { id, outs }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return;\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f6(__0, __1, __2) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*update*/(id, olds, news) {\n      return call(this.name(\"Update\"), { id, olds, news }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError)\n          return {\n            id\n          };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f7(__0, __1) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*read*/(id, props) {\n      return call(this.name(\"Read\"), { id, props }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return { id, props };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f8(__0, __1, __2) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*diff*/(id, olds, news) {\n      return call(this.name(\"Diff\"), { id, olds, news }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return { id, olds, news };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f0() {\n  return (function() {\n    with({ provider: __provider, this: undefined, arguments: undefined }) {\n\nreturn () => provider;\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n",
+                        "entries": {
+                            "/+not-found.html": "s3",
+                            "/_sitemap.html": "s3",
+                            "/favicon.ico": "s3",
+                            "/index.html": "s3",
+                            "metadata": "{\"custom404\":\"/index.html\",\"s3\":{\"domain\":\"inventario-staging-webassetsbucket-rzscnzou.s3.us-east-1.amazonaws.com\",\"dir\":\"\",\"routes\":[\"/AddItemPage\",\"/assets\",\"/HomePage\",\"/InventoryPage\",\"/ReportsPage\",\"/_expo\"]}}"
+                        },
+                        "namespace": "7f98",
+                        "purge": true,
+                        "store": "arn:aws:cloudfront::241291598884:key-value-store/31cc2cb4-3800-4760-85bd-b1b408ce7125"
+                    },
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:StaticSite::web",
+                    "dependencies": [
+                        "urn:pulumi:staging::inventario::sst:aws:StaticSite$aws:cloudfront/keyValueStore:KeyValueStore::webKvStore",
+                        "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket$aws:s3/bucketPolicy:BucketPolicy::webAssetsPolicy",
+                        "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket$aws:s3/bucketV2:BucketV2::webAssetsBucket"
+                    ],
+                    "provider": "urn:pulumi:staging::inventario::pulumi:providers:pulumi-nodejs::default::83196946-6acd-4afe-ab8b-541a525d614e",
+                    "propertyDependencies": {
+                        "__provider": [],
+                        "entries": [
+                            "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket$aws:s3/bucketPolicy:BucketPolicy::webAssetsPolicy",
+                            "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket$aws:s3/bucketV2:BucketV2::webAssetsBucket"
+                        ],
+                        "namespace": [],
+                        "purge": [],
+                        "store": [
+                            "urn:pulumi:staging::inventario::sst:aws:StaticSite$aws:cloudfront/keyValueStore:KeyValueStore::webKvStore"
+                        ]
+                    },
+                    "created": "2025-08-02T14:43:40.1784022Z",
+                    "modified": "2025-08-19T21:28:55.4069367Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:CDN$pulumi-nodejs:dynamic:Resource::webCdnWaiter.sst.aws.DistributionDeploymentWaiter",
+                    "custom": true,
+                    "id": "waiter",
+                    "type": "pulumi-nodejs:dynamic:Resource",
+                    "inputs": {
+                        "__provider": "exports.handler = __f0;\n\nvar __provider_proto = {};\nObject.defineProperty(__f1, \"prototype\", { value: __provider_proto });\nObject.defineProperty(__provider_proto, \"constructor\", { configurable: true, writable: true, value: __f1 });\nObject.defineProperty(__provider_proto, \"name\", { configurable: true, writable: true, value: __f2 });\nObject.setPrototypeOf(__f4, global.Error);\nObject.defineProperty(__provider_proto, \"create\", { configurable: true, writable: true, value: __f3 });\nObject.defineProperty(__provider_proto, \"delete\", { configurable: true, writable: true, value: __f5 });\nObject.defineProperty(__provider_proto, \"update\", { configurable: true, writable: true, value: __f6 });\nObject.defineProperty(__provider_proto, \"read\", { configurable: true, writable: true, value: __f7 });\nObject.defineProperty(__provider_proto, \"diff\", { configurable: true, writable: true, value: __f8 });\nvar __provider = Object.create(__provider_proto);\n__provider.type = \"Aws.DistributionDeploymentWaiter\";\n\nfunction __f1(__0) {\n  return (function() {\n    with({ this: undefined, arguments: undefined }) {\n\nreturn function /*constructor*/(type) {\n      this.type = type;\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f2(__0) {\n  return (function() {\n    with({ this: undefined, arguments: undefined }) {\n\nreturn function /*name*/(action) {\n      return \"Resource.\" + this.type + \".\" + action;\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f4(__0) {\n  return (function() {\n    with({ __super: global.Error, this: undefined, arguments: undefined }) {\n\nreturn function /*constructor*/(method) {\n    __super.call(this, `Method \"${method}\" not found`);\n    this.method = method;\n};\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\nconst http = require(\"http\");\n\nfunction __call(__0, __1) {\n  return (function() {\n    with({ MethodNotFoundError: __f4, call: __call, this: undefined, arguments: undefined }) {\n\nreturn async function /*call*/(method, args) {\n    return new Promise((resolve, reject) => {\n      const url = new URL(process.env.SST_SERVER + \"/rpc\");\n      const options = {\n        hostname: url.hostname,\n        port: url.port,\n        path: url.pathname,\n        method: \"POST\",\n        headers: {\n          \"Content-Type\": \"application/json\"\n        }\n      };\n      const req = http.request(options, (res) => {\n        let data = \"\";\n        res.on(\"data\", (chunk) => {\n          data += chunk;\n        });\n        res.on(\"end\", () => {\n          if (res.statusCode !== 200) {\n            reject(new Error(`Failed to call RPC: ${data}`));\n            return;\n          }\n          try {\n            const json = JSON.parse(data);\n            if (json.error) {\n              if (json.error.startsWith(\"rpc: can't find\")) {\n                reject(new MethodNotFoundError(method));\n                return;\n              }\n              reject(new Error(json.error));\n              return;\n            }\n            resolve(json.result);\n          } catch (error) {\n            reject(new Error(`Failed to parse JSON: ${error.message}`));\n          }\n        });\n      });\n      req.on(\"error\", (error) => {\n        reject(error);\n      });\n      req.setTimeout(0);\n      const body = JSON.stringify({\n        jsonrpc: \"1.0\",\n        method,\n        params: [args]\n      });\n      req.write(body);\n      req.end();\n    });\n  };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f3(__0) {\n  return (function() {\n    with({ call: __call, this: undefined, arguments: undefined }) {\n\nreturn async function /*create*/(inputs) {\n      return call(this.name(\"Create\"), inputs);\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f5(__0, __1) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*delete*/(id, outs) {\n      return call(this.name(\"Delete\"), { id, outs }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return;\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f6(__0, __1, __2) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*update*/(id, olds, news) {\n      return call(this.name(\"Update\"), { id, olds, news }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError)\n          return {\n            id\n          };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f7(__0, __1) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*read*/(id, props) {\n      return call(this.name(\"Read\"), { id, props }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return { id, props };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f8(__0, __1, __2) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*diff*/(id, olds, news) {\n      return call(this.name(\"Diff\"), { id, olds, news }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return { id, olds, news };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f0() {\n  return (function() {\n    with({ provider: __provider, this: undefined, arguments: undefined }) {\n\nreturn () => provider;\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n",
+                        "distributionId": "E148FX4BPVPDSH",
+                        "etag": "E1WOCX9AEGPDK6",
+                        "wait": true
+                    },
+                    "outputs": {
+                        "__provider": "exports.handler = __f0;\n\nvar __provider_proto = {};\nObject.defineProperty(__f1, \"prototype\", { value: __provider_proto });\nObject.defineProperty(__provider_proto, \"constructor\", { configurable: true, writable: true, value: __f1 });\nObject.defineProperty(__provider_proto, \"name\", { configurable: true, writable: true, value: __f2 });\nObject.setPrototypeOf(__f4, global.Error);\nObject.defineProperty(__provider_proto, \"create\", { configurable: true, writable: true, value: __f3 });\nObject.defineProperty(__provider_proto, \"delete\", { configurable: true, writable: true, value: __f5 });\nObject.defineProperty(__provider_proto, \"update\", { configurable: true, writable: true, value: __f6 });\nObject.defineProperty(__provider_proto, \"read\", { configurable: true, writable: true, value: __f7 });\nObject.defineProperty(__provider_proto, \"diff\", { configurable: true, writable: true, value: __f8 });\nvar __provider = Object.create(__provider_proto);\n__provider.type = \"Aws.DistributionDeploymentWaiter\";\n\nfunction __f1(__0) {\n  return (function() {\n    with({ this: undefined, arguments: undefined }) {\n\nreturn function /*constructor*/(type) {\n      this.type = type;\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f2(__0) {\n  return (function() {\n    with({ this: undefined, arguments: undefined }) {\n\nreturn function /*name*/(action) {\n      return \"Resource.\" + this.type + \".\" + action;\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f4(__0) {\n  return (function() {\n    with({ __super: global.Error, this: undefined, arguments: undefined }) {\n\nreturn function /*constructor*/(method) {\n    __super.call(this, `Method \"${method}\" not found`);\n    this.method = method;\n};\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\nconst http = require(\"http\");\n\nfunction __call(__0, __1) {\n  return (function() {\n    with({ MethodNotFoundError: __f4, call: __call, this: undefined, arguments: undefined }) {\n\nreturn async function /*call*/(method, args) {\n    return new Promise((resolve, reject) => {\n      const url = new URL(process.env.SST_SERVER + \"/rpc\");\n      const options = {\n        hostname: url.hostname,\n        port: url.port,\n        path: url.pathname,\n        method: \"POST\",\n        headers: {\n          \"Content-Type\": \"application/json\"\n        }\n      };\n      const req = http.request(options, (res) => {\n        let data = \"\";\n        res.on(\"data\", (chunk) => {\n          data += chunk;\n        });\n        res.on(\"end\", () => {\n          if (res.statusCode !== 200) {\n            reject(new Error(`Failed to call RPC: ${data}`));\n            return;\n          }\n          try {\n            const json = JSON.parse(data);\n            if (json.error) {\n              if (json.error.startsWith(\"rpc: can't find\")) {\n                reject(new MethodNotFoundError(method));\n                return;\n              }\n              reject(new Error(json.error));\n              return;\n            }\n            resolve(json.result);\n          } catch (error) {\n            reject(new Error(`Failed to parse JSON: ${error.message}`));\n          }\n        });\n      });\n      req.on(\"error\", (error) => {\n        reject(error);\n      });\n      req.setTimeout(0);\n      const body = JSON.stringify({\n        jsonrpc: \"1.0\",\n        method,\n        params: [args]\n      });\n      req.write(body);\n      req.end();\n    });\n  };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f3(__0) {\n  return (function() {\n    with({ call: __call, this: undefined, arguments: undefined }) {\n\nreturn async function /*create*/(inputs) {\n      return call(this.name(\"Create\"), inputs);\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f5(__0, __1) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*delete*/(id, outs) {\n      return call(this.name(\"Delete\"), { id, outs }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return;\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f6(__0, __1, __2) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*update*/(id, olds, news) {\n      return call(this.name(\"Update\"), { id, olds, news }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError)\n          return {\n            id\n          };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f7(__0, __1) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*read*/(id, props) {\n      return call(this.name(\"Read\"), { id, props }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return { id, props };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f8(__0, __1, __2) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*diff*/(id, olds, news) {\n      return call(this.name(\"Diff\"), { id, olds, news }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return { id, olds, news };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f0() {\n  return (function() {\n    with({ provider: __provider, this: undefined, arguments: undefined }) {\n\nreturn () => provider;\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n",
+                        "isDone": true
+                    },
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:CDN::webCdn",
+                    "dependencies": [
+                        "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:CDN$aws:cloudfront/distribution:Distribution::webCdnDistribution"
+                    ],
+                    "provider": "urn:pulumi:staging::inventario::pulumi:providers:pulumi-nodejs::default::83196946-6acd-4afe-ab8b-541a525d614e",
+                    "propertyDependencies": {
+                        "__provider": [],
+                        "distributionId": [
+                            "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:CDN$aws:cloudfront/distribution:Distribution::webCdnDistribution"
+                        ],
+                        "etag": [
+                            "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:CDN$aws:cloudfront/distribution:Distribution::webCdnDistribution"
+                        ],
+                        "wait": []
+                    },
+                    "created": "2025-08-02T14:47:36.9610079Z",
+                    "modified": "2025-08-02T14:47:36.9610079Z",
+                    "ignoreChanges": [
+                        "*"
+                    ]
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:StaticSite$pulumi-nodejs:dynamic:Resource::webAssetFiles.sst.aws.BucketFiles",
+                    "custom": true,
+                    "id": "files",
+                    "type": "pulumi-nodejs:dynamic:Resource",
+                    "inputs": {
+                        "__provider": "exports.handler = __f0;\n\nvar __provider_proto = {};\nObject.defineProperty(__f1, \"prototype\", { value: __provider_proto });\nObject.defineProperty(__provider_proto, \"constructor\", { configurable: true, writable: true, value: __f1 });\nObject.defineProperty(__provider_proto, \"name\", { configurable: true, writable: true, value: __f2 });\nObject.setPrototypeOf(__f4, global.Error);\nObject.defineProperty(__provider_proto, \"create\", { configurable: true, writable: true, value: __f3 });\nObject.defineProperty(__provider_proto, \"delete\", { configurable: true, writable: true, value: __f5 });\nObject.defineProperty(__provider_proto, \"update\", { configurable: true, writable: true, value: __f6 });\nObject.defineProperty(__provider_proto, \"read\", { configurable: true, writable: true, value: __f7 });\nObject.defineProperty(__provider_proto, \"diff\", { configurable: true, writable: true, value: __f8 });\nvar __provider = Object.create(__provider_proto);\n__provider.type = \"Aws.BucketFiles\";\n\nfunction __f1(__0) {\n  return (function() {\n    with({ this: undefined, arguments: undefined }) {\n\nreturn function /*constructor*/(type) {\n      this.type = type;\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f2(__0) {\n  return (function() {\n    with({ this: undefined, arguments: undefined }) {\n\nreturn function /*name*/(action) {\n      return \"Resource.\" + this.type + \".\" + action;\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f4(__0) {\n  return (function() {\n    with({ __super: global.Error, this: undefined, arguments: undefined }) {\n\nreturn function /*constructor*/(method) {\n    __super.call(this, `Method \"${method}\" not found`);\n    this.method = method;\n};\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\nconst http = require(\"http\");\n\nfunction __call(__0, __1) {\n  return (function() {\n    with({ MethodNotFoundError: __f4, call: __call, this: undefined, arguments: undefined }) {\n\nreturn async function /*call*/(method, args) {\n    return new Promise((resolve, reject) => {\n      const url = new URL(process.env.SST_SERVER + \"/rpc\");\n      const options = {\n        hostname: url.hostname,\n        port: url.port,\n        path: url.pathname,\n        method: \"POST\",\n        headers: {\n          \"Content-Type\": \"application/json\"\n        }\n      };\n      const req = http.request(options, (res) => {\n        let data = \"\";\n        res.on(\"data\", (chunk) => {\n          data += chunk;\n        });\n        res.on(\"end\", () => {\n          if (res.statusCode !== 200) {\n            reject(new Error(`Failed to call RPC: ${data}`));\n            return;\n          }\n          try {\n            const json = JSON.parse(data);\n            if (json.error) {\n              if (json.error.startsWith(\"rpc: can't find\")) {\n                reject(new MethodNotFoundError(method));\n                return;\n              }\n              reject(new Error(json.error));\n              return;\n            }\n            resolve(json.result);\n          } catch (error) {\n            reject(new Error(`Failed to parse JSON: ${error.message}`));\n          }\n        });\n      });\n      req.on(\"error\", (error) => {\n        reject(error);\n      });\n      req.setTimeout(0);\n      const body = JSON.stringify({\n        jsonrpc: \"1.0\",\n        method,\n        params: [args]\n      });\n      req.write(body);\n      req.end();\n    });\n  };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f3(__0) {\n  return (function() {\n    with({ call: __call, this: undefined, arguments: undefined }) {\n\nreturn async function /*create*/(inputs) {\n      return call(this.name(\"Create\"), inputs);\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f5(__0, __1) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*delete*/(id, outs) {\n      return call(this.name(\"Delete\"), { id, outs }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return;\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f6(__0, __1, __2) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*update*/(id, olds, news) {\n      return call(this.name(\"Update\"), { id, olds, news }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError)\n          return {\n            id\n          };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f7(__0, __1) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*read*/(id, props) {\n      return call(this.name(\"Read\"), { id, props }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return { id, props };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f8(__0, __1, __2) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*diff*/(id, olds, news) {\n      return call(this.name(\"Diff\"), { id, olds, news }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return { id, olds, news };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f0() {\n  return (function() {\n    with({ provider: __provider, this: undefined, arguments: undefined }) {\n\nreturn () => provider;\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n",
+                        "bucketName": "inventario-staging-webassetsbucket-rzscnzou",
+                        "files": [
+                            {
+                                "cacheControl": "max-age=0,no-cache,no-store,must-revalidate",
+                                "contentType": "text/html;charset=UTF-8",
+                                "hash": "14f1efdd556b29da52d9aca4598d676228a4c80f811bde1bf8f847bfadc2eee4",
+                                "key": "_sitemap.html",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\_sitemap.html"
+                            },
+                            {
+                                "cacheControl": "max-age=0,no-cache,no-store,must-revalidate",
+                                "contentType": "text/html;charset=UTF-8",
+                                "hash": "0658e39edbebc9ec3baf85002ed75b64488991728a1272ff1636c1665e6a5ae9",
+                                "key": "index.html",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\index.html"
+                            },
+                            {
+                                "cacheControl": "max-age=0,no-cache,no-store,must-revalidate",
+                                "contentType": "text/html;charset=UTF-8",
+                                "hash": "9a059871fe96194aba75d716dc01ebbb6c566c1aea0bcddf8f2acc698bae66c7",
+                                "key": "+not-found.html",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\+not-found.html"
+                            },
+                            {
+                                "cacheControl": "max-age=0,no-cache,no-store,must-revalidate",
+                                "contentType": "text/html;charset=UTF-8",
+                                "hash": "b61f57c4b0ba31b8101ebb9d26eed4ff89823ff2c394eb71beec2a2e56dd527d",
+                                "key": "ReportsPage/index.html",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\ReportsPage\\index.html"
+                            },
+                            {
+                                "cacheControl": "max-age=0,no-cache,no-store,must-revalidate",
+                                "contentType": "text/html;charset=UTF-8",
+                                "hash": "b513dcac9c42dd0be7d65922775d92cea8039dda9bc58db014ad22e0f4b49df8",
+                                "key": "InventoryPage/index.html",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\InventoryPage\\index.html"
+                            },
+                            {
+                                "cacheControl": "max-age=0,no-cache,no-store,must-revalidate",
+                                "contentType": "text/html;charset=UTF-8",
+                                "hash": "a693ee49281f79babbdf1a003494efc7bbbe4c7d1030b880d8a4382e93cd34a4",
+                                "key": "HomePage/index.html",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\HomePage\\index.html"
+                            },
+                            {
+                                "cacheControl": "max-age=0,no-cache,no-store,must-revalidate",
+                                "contentType": "text/html;charset=UTF-8",
+                                "hash": "4a4c7c115baea60cb7ac7834bfc093044f9133559c6ca51d4d713301096e3b23",
+                                "key": "AddItemPage/index.html",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\AddItemPage\\index.html"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/vnd.microsoft.icon",
+                                "hash": "96bf3ea63e5ad6591a3795df177bd8bc63e91bb524005df1fddbf0926b633308",
+                                "key": "favicon.ico",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\favicon.ico"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "text/javascript;charset=UTF-8",
+                                "hash": "10fe417c9a49274f4f9266414f25fc3c27472015bc9a220cd3e3500cbf22aebe",
+                                "key": "_expo/static/js/web/entry-a5ff424a1c837f4ce47bddad4839b8be.js",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\_expo\\static\\js\\web\\entry-a5ff424a1c837f4ce47bddad4839b8be.js"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "eed38bc9b0a775406cb5da40a3c2b8b122cbe034171bfe4b5c36b57e9fcb62a0",
+                                "key": "assets/__node_modules/expo-router/assets/unmatched.20e71bdf79e3a97bf55fd9e164041578.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\expo-router\\assets\\unmatched.20e71bdf79e3a97bf55fd9e164041578.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "aa286c2c6248dda24976ea4b51045da9e15349cdac1fc1cb00665122318132c6",
+                                "key": "assets/__node_modules/expo-router/assets/sitemap.412dd9275b6b48ad28f5e3d81bb1f626.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\expo-router\\assets\\sitemap.412dd9275b6b48ad28f5e3d81bb1f626.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "bcb9c905fd886a8b52a5f803fabaa31a1be36be2812ff9690f60d8c4a9735a5c",
+                                "key": "assets/__node_modules/expo-router/assets/pkg.ab19f4cbc543357183a20571f68380a3.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\expo-router\\assets\\pkg.ab19f4cbc543357183a20571f68380a3.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "b3dd5dd2d913d89f9941fd4327f73400dfb6304e50bf85a5f4b675e8b034af71",
+                                "key": "assets/__node_modules/expo-router/assets/forward.d8b800c443b8972542883e0b9de2bdc6.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\expo-router\\assets\\forward.d8b800c443b8972542883e0b9de2bdc6.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "a944c8c1ce7c7f0415abed3cf35312f842c8faf3accbe7a472e65741e1762935",
+                                "key": "assets/__node_modules/expo-router/assets/file.19eeb73b9593a38f8e9f418337fc7d10.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\expo-router\\assets\\file.19eeb73b9593a38f8e9f418337fc7d10.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "a5086578c5c27ee648f8cacfa785fc03000cbd3a79687f375834b977ef42d39c",
+                                "key": "assets/__node_modules/expo-router/assets/error.d1ea1496f9057eb392d5bbf3732a61b7.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\expo-router\\assets\\error.d1ea1496f9057eb392d5bbf3732a61b7.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "c56649d22f22ed8cb548ed097d6896ed8ce8faf0b4b138d21a34c824212bbd3f",
+                                "key": "assets/__node_modules/expo-router/assets/arrow_down.017bc6ba3fc25503e5eb5e53826d48a8.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\expo-router\\assets\\arrow_down.017bc6ba3fc25503e5eb5e53826d48a8.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "0e8170c778f3fef62e290b89657b787bbd8f05ce873fa3b75262337eea15818a",
+                                "key": "assets/__node_modules/@react-navigation/elements/lib/module/assets/search-icon.286d67d3f74808a60a78d3ebf1a5fb57.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@react-navigation\\elements\\lib\\module\\assets\\search-icon.286d67d3f74808a60a78d3ebf1a5fb57.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "9a4c9554d566dba4fd4f579c3fc300205ae87caa60ec0ef0b7d662d612def1ff",
+                                "key": "assets/__node_modules/@react-navigation/elements/lib/module/assets/close-icon.808e1b1b9b53114ec2838071a7e6daa7@4x.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@react-navigation\\elements\\lib\\module\\assets\\close-icon.808e1b1b9b53114ec2838071a7e6daa7@4x.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "f52f35d2bed23680b63d4064d4dbf10dc5d6ea75252faf9904ac6a9b6db3bce9",
+                                "key": "assets/__node_modules/@react-navigation/elements/lib/module/assets/close-icon.808e1b1b9b53114ec2838071a7e6daa7@3x.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@react-navigation\\elements\\lib\\module\\assets\\close-icon.808e1b1b9b53114ec2838071a7e6daa7@3x.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "60c69bf8bbcfa8d4dbdca8f2226d4d0ecdcab80fe822c33bc0789dcc0556648b",
+                                "key": "assets/__node_modules/@react-navigation/elements/lib/module/assets/close-icon.808e1b1b9b53114ec2838071a7e6daa7@2x.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@react-navigation\\elements\\lib\\module\\assets\\close-icon.808e1b1b9b53114ec2838071a7e6daa7@2x.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "2368a36882b294cf7d8cb57730c3ed50e105f90d2ff72b803cad1978201e7837",
+                                "key": "assets/__node_modules/@react-navigation/elements/lib/module/assets/close-icon.808e1b1b9b53114ec2838071a7e6daa7.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@react-navigation\\elements\\lib\\module\\assets\\close-icon.808e1b1b9b53114ec2838071a7e6daa7.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "2869bfbefc2015f8050c6ca3e791a47bfcd005b7d7cee266363c15887d0ef0fb",
+                                "key": "assets/__node_modules/@react-navigation/elements/lib/module/assets/clear-icon.c94f6478e7ae0cdd9f15de1fcb9e5e55@4x.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@react-navigation\\elements\\lib\\module\\assets\\clear-icon.c94f6478e7ae0cdd9f15de1fcb9e5e55@4x.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "d41c8fe7b1934edadf0f9e424fe8cfdce1101264ec87573a2ff1024c3245e7e4",
+                                "key": "assets/__node_modules/@react-navigation/elements/lib/module/assets/clear-icon.c94f6478e7ae0cdd9f15de1fcb9e5e55@3x.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@react-navigation\\elements\\lib\\module\\assets\\clear-icon.c94f6478e7ae0cdd9f15de1fcb9e5e55@3x.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "4ae48f8804f629e54c39e9a02e2850466d2982b3b4bacfe930646b38efb9895f",
+                                "key": "assets/__node_modules/@react-navigation/elements/lib/module/assets/clear-icon.c94f6478e7ae0cdd9f15de1fcb9e5e55@2x.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@react-navigation\\elements\\lib\\module\\assets\\clear-icon.c94f6478e7ae0cdd9f15de1fcb9e5e55@2x.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "e6d289701ee270723800581598072ee3cbac2f1b2b1cec309681faa99a4505f3",
+                                "key": "assets/__node_modules/@react-navigation/elements/lib/module/assets/clear-icon.c94f6478e7ae0cdd9f15de1fcb9e5e55.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@react-navigation\\elements\\lib\\module\\assets\\clear-icon.c94f6478e7ae0cdd9f15de1fcb9e5e55.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "521fc0eda5c82d0058853715b3363b92207b2185743c2f9a6ddf2fee31cef738",
+                                "key": "assets/__node_modules/@react-navigation/elements/lib/module/assets/back-icon.35ba0eaec5a4f5ed12ca16fabeae451d.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@react-navigation\\elements\\lib\\module\\assets\\back-icon.35ba0eaec5a4f5ed12ca16fabeae451d.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "f85f48d0be2d9f331fc1cfe7285fc2078d30bb763f5158172f5a91df47bcbb79",
+                                "key": "assets/__node_modules/@react-navigation/elements/lib/module/assets/back-icon-mask.0a328cd9c1afd0afe8e3b1ec5165b1b4.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@react-navigation\\elements\\lib\\module\\assets\\back-icon-mask.0a328cd9c1afd0afe8e3b1ec5165b1b4.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "font/ttf",
+                                "hash": "225c08850d8abc25f989c41ed69644d3dd2776cf0ba0846cc66fc592123a50bd",
+                                "key": "assets/__node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Feather.a76d309774d33d9856f650bed4292a23.ttf",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@expo\\vector-icons\\build\\vendor\\react-native-vector-icons\\Fonts\\Feather.a76d309774d33d9856f650bed4292a23.ttf"
+                            }
+                        ],
+                        "purge": true,
+                        "region": "us-east-1"
+                    },
+                    "outputs": {
+                        "__provider": "exports.handler = __f0;\n\nvar __provider_proto = {};\nObject.defineProperty(__f1, \"prototype\", { value: __provider_proto });\nObject.defineProperty(__provider_proto, \"constructor\", { configurable: true, writable: true, value: __f1 });\nObject.defineProperty(__provider_proto, \"name\", { configurable: true, writable: true, value: __f2 });\nObject.setPrototypeOf(__f4, global.Error);\nObject.defineProperty(__provider_proto, \"create\", { configurable: true, writable: true, value: __f3 });\nObject.defineProperty(__provider_proto, \"delete\", { configurable: true, writable: true, value: __f5 });\nObject.defineProperty(__provider_proto, \"update\", { configurable: true, writable: true, value: __f6 });\nObject.defineProperty(__provider_proto, \"read\", { configurable: true, writable: true, value: __f7 });\nObject.defineProperty(__provider_proto, \"diff\", { configurable: true, writable: true, value: __f8 });\nvar __provider = Object.create(__provider_proto);\n__provider.type = \"Aws.BucketFiles\";\n\nfunction __f1(__0) {\n  return (function() {\n    with({ this: undefined, arguments: undefined }) {\n\nreturn function /*constructor*/(type) {\n      this.type = type;\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f2(__0) {\n  return (function() {\n    with({ this: undefined, arguments: undefined }) {\n\nreturn function /*name*/(action) {\n      return \"Resource.\" + this.type + \".\" + action;\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f4(__0) {\n  return (function() {\n    with({ __super: global.Error, this: undefined, arguments: undefined }) {\n\nreturn function /*constructor*/(method) {\n    __super.call(this, `Method \"${method}\" not found`);\n    this.method = method;\n};\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\nconst http = require(\"http\");\n\nfunction __call(__0, __1) {\n  return (function() {\n    with({ MethodNotFoundError: __f4, call: __call, this: undefined, arguments: undefined }) {\n\nreturn async function /*call*/(method, args) {\n    return new Promise((resolve, reject) => {\n      const url = new URL(process.env.SST_SERVER + \"/rpc\");\n      const options = {\n        hostname: url.hostname,\n        port: url.port,\n        path: url.pathname,\n        method: \"POST\",\n        headers: {\n          \"Content-Type\": \"application/json\"\n        }\n      };\n      const req = http.request(options, (res) => {\n        let data = \"\";\n        res.on(\"data\", (chunk) => {\n          data += chunk;\n        });\n        res.on(\"end\", () => {\n          if (res.statusCode !== 200) {\n            reject(new Error(`Failed to call RPC: ${data}`));\n            return;\n          }\n          try {\n            const json = JSON.parse(data);\n            if (json.error) {\n              if (json.error.startsWith(\"rpc: can't find\")) {\n                reject(new MethodNotFoundError(method));\n                return;\n              }\n              reject(new Error(json.error));\n              return;\n            }\n            resolve(json.result);\n          } catch (error) {\n            reject(new Error(`Failed to parse JSON: ${error.message}`));\n          }\n        });\n      });\n      req.on(\"error\", (error) => {\n        reject(error);\n      });\n      req.setTimeout(0);\n      const body = JSON.stringify({\n        jsonrpc: \"1.0\",\n        method,\n        params: [args]\n      });\n      req.write(body);\n      req.end();\n    });\n  };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f3(__0) {\n  return (function() {\n    with({ call: __call, this: undefined, arguments: undefined }) {\n\nreturn async function /*create*/(inputs) {\n      return call(this.name(\"Create\"), inputs);\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f5(__0, __1) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*delete*/(id, outs) {\n      return call(this.name(\"Delete\"), { id, outs }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return;\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f6(__0, __1, __2) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*update*/(id, olds, news) {\n      return call(this.name(\"Update\"), { id, olds, news }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError)\n          return {\n            id\n          };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f7(__0, __1) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*read*/(id, props) {\n      return call(this.name(\"Read\"), { id, props }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return { id, props };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f8(__0, __1, __2) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*diff*/(id, olds, news) {\n      return call(this.name(\"Diff\"), { id, olds, news }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return { id, olds, news };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f0() {\n  return (function() {\n    with({ provider: __provider, this: undefined, arguments: undefined }) {\n\nreturn () => provider;\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n",
+                        "bucketName": "inventario-staging-webassetsbucket-rzscnzou",
+                        "files": [
+                            {
+                                "cacheControl": "max-age=0,no-cache,no-store,must-revalidate",
+                                "contentType": "text/html;charset=UTF-8",
+                                "hash": "14f1efdd556b29da52d9aca4598d676228a4c80f811bde1bf8f847bfadc2eee4",
+                                "key": "_sitemap.html",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\_sitemap.html"
+                            },
+                            {
+                                "cacheControl": "max-age=0,no-cache,no-store,must-revalidate",
+                                "contentType": "text/html;charset=UTF-8",
+                                "hash": "0658e39edbebc9ec3baf85002ed75b64488991728a1272ff1636c1665e6a5ae9",
+                                "key": "index.html",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\index.html"
+                            },
+                            {
+                                "cacheControl": "max-age=0,no-cache,no-store,must-revalidate",
+                                "contentType": "text/html;charset=UTF-8",
+                                "hash": "9a059871fe96194aba75d716dc01ebbb6c566c1aea0bcddf8f2acc698bae66c7",
+                                "key": "+not-found.html",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\+not-found.html"
+                            },
+                            {
+                                "cacheControl": "max-age=0,no-cache,no-store,must-revalidate",
+                                "contentType": "text/html;charset=UTF-8",
+                                "hash": "b61f57c4b0ba31b8101ebb9d26eed4ff89823ff2c394eb71beec2a2e56dd527d",
+                                "key": "ReportsPage/index.html",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\ReportsPage\\index.html"
+                            },
+                            {
+                                "cacheControl": "max-age=0,no-cache,no-store,must-revalidate",
+                                "contentType": "text/html;charset=UTF-8",
+                                "hash": "b513dcac9c42dd0be7d65922775d92cea8039dda9bc58db014ad22e0f4b49df8",
+                                "key": "InventoryPage/index.html",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\InventoryPage\\index.html"
+                            },
+                            {
+                                "cacheControl": "max-age=0,no-cache,no-store,must-revalidate",
+                                "contentType": "text/html;charset=UTF-8",
+                                "hash": "a693ee49281f79babbdf1a003494efc7bbbe4c7d1030b880d8a4382e93cd34a4",
+                                "key": "HomePage/index.html",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\HomePage\\index.html"
+                            },
+                            {
+                                "cacheControl": "max-age=0,no-cache,no-store,must-revalidate",
+                                "contentType": "text/html;charset=UTF-8",
+                                "hash": "4a4c7c115baea60cb7ac7834bfc093044f9133559c6ca51d4d713301096e3b23",
+                                "key": "AddItemPage/index.html",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\AddItemPage\\index.html"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/vnd.microsoft.icon",
+                                "hash": "96bf3ea63e5ad6591a3795df177bd8bc63e91bb524005df1fddbf0926b633308",
+                                "key": "favicon.ico",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\favicon.ico"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "text/javascript;charset=UTF-8",
+                                "hash": "10fe417c9a49274f4f9266414f25fc3c27472015bc9a220cd3e3500cbf22aebe",
+                                "key": "_expo/static/js/web/entry-a5ff424a1c837f4ce47bddad4839b8be.js",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\_expo\\static\\js\\web\\entry-a5ff424a1c837f4ce47bddad4839b8be.js"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "eed38bc9b0a775406cb5da40a3c2b8b122cbe034171bfe4b5c36b57e9fcb62a0",
+                                "key": "assets/__node_modules/expo-router/assets/unmatched.20e71bdf79e3a97bf55fd9e164041578.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\expo-router\\assets\\unmatched.20e71bdf79e3a97bf55fd9e164041578.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "aa286c2c6248dda24976ea4b51045da9e15349cdac1fc1cb00665122318132c6",
+                                "key": "assets/__node_modules/expo-router/assets/sitemap.412dd9275b6b48ad28f5e3d81bb1f626.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\expo-router\\assets\\sitemap.412dd9275b6b48ad28f5e3d81bb1f626.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "bcb9c905fd886a8b52a5f803fabaa31a1be36be2812ff9690f60d8c4a9735a5c",
+                                "key": "assets/__node_modules/expo-router/assets/pkg.ab19f4cbc543357183a20571f68380a3.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\expo-router\\assets\\pkg.ab19f4cbc543357183a20571f68380a3.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "b3dd5dd2d913d89f9941fd4327f73400dfb6304e50bf85a5f4b675e8b034af71",
+                                "key": "assets/__node_modules/expo-router/assets/forward.d8b800c443b8972542883e0b9de2bdc6.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\expo-router\\assets\\forward.d8b800c443b8972542883e0b9de2bdc6.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "a944c8c1ce7c7f0415abed3cf35312f842c8faf3accbe7a472e65741e1762935",
+                                "key": "assets/__node_modules/expo-router/assets/file.19eeb73b9593a38f8e9f418337fc7d10.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\expo-router\\assets\\file.19eeb73b9593a38f8e9f418337fc7d10.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "a5086578c5c27ee648f8cacfa785fc03000cbd3a79687f375834b977ef42d39c",
+                                "key": "assets/__node_modules/expo-router/assets/error.d1ea1496f9057eb392d5bbf3732a61b7.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\expo-router\\assets\\error.d1ea1496f9057eb392d5bbf3732a61b7.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "c56649d22f22ed8cb548ed097d6896ed8ce8faf0b4b138d21a34c824212bbd3f",
+                                "key": "assets/__node_modules/expo-router/assets/arrow_down.017bc6ba3fc25503e5eb5e53826d48a8.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\expo-router\\assets\\arrow_down.017bc6ba3fc25503e5eb5e53826d48a8.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "0e8170c778f3fef62e290b89657b787bbd8f05ce873fa3b75262337eea15818a",
+                                "key": "assets/__node_modules/@react-navigation/elements/lib/module/assets/search-icon.286d67d3f74808a60a78d3ebf1a5fb57.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@react-navigation\\elements\\lib\\module\\assets\\search-icon.286d67d3f74808a60a78d3ebf1a5fb57.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "9a4c9554d566dba4fd4f579c3fc300205ae87caa60ec0ef0b7d662d612def1ff",
+                                "key": "assets/__node_modules/@react-navigation/elements/lib/module/assets/close-icon.808e1b1b9b53114ec2838071a7e6daa7@4x.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@react-navigation\\elements\\lib\\module\\assets\\close-icon.808e1b1b9b53114ec2838071a7e6daa7@4x.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "f52f35d2bed23680b63d4064d4dbf10dc5d6ea75252faf9904ac6a9b6db3bce9",
+                                "key": "assets/__node_modules/@react-navigation/elements/lib/module/assets/close-icon.808e1b1b9b53114ec2838071a7e6daa7@3x.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@react-navigation\\elements\\lib\\module\\assets\\close-icon.808e1b1b9b53114ec2838071a7e6daa7@3x.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "60c69bf8bbcfa8d4dbdca8f2226d4d0ecdcab80fe822c33bc0789dcc0556648b",
+                                "key": "assets/__node_modules/@react-navigation/elements/lib/module/assets/close-icon.808e1b1b9b53114ec2838071a7e6daa7@2x.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@react-navigation\\elements\\lib\\module\\assets\\close-icon.808e1b1b9b53114ec2838071a7e6daa7@2x.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "2368a36882b294cf7d8cb57730c3ed50e105f90d2ff72b803cad1978201e7837",
+                                "key": "assets/__node_modules/@react-navigation/elements/lib/module/assets/close-icon.808e1b1b9b53114ec2838071a7e6daa7.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@react-navigation\\elements\\lib\\module\\assets\\close-icon.808e1b1b9b53114ec2838071a7e6daa7.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "2869bfbefc2015f8050c6ca3e791a47bfcd005b7d7cee266363c15887d0ef0fb",
+                                "key": "assets/__node_modules/@react-navigation/elements/lib/module/assets/clear-icon.c94f6478e7ae0cdd9f15de1fcb9e5e55@4x.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@react-navigation\\elements\\lib\\module\\assets\\clear-icon.c94f6478e7ae0cdd9f15de1fcb9e5e55@4x.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "d41c8fe7b1934edadf0f9e424fe8cfdce1101264ec87573a2ff1024c3245e7e4",
+                                "key": "assets/__node_modules/@react-navigation/elements/lib/module/assets/clear-icon.c94f6478e7ae0cdd9f15de1fcb9e5e55@3x.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@react-navigation\\elements\\lib\\module\\assets\\clear-icon.c94f6478e7ae0cdd9f15de1fcb9e5e55@3x.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "4ae48f8804f629e54c39e9a02e2850466d2982b3b4bacfe930646b38efb9895f",
+                                "key": "assets/__node_modules/@react-navigation/elements/lib/module/assets/clear-icon.c94f6478e7ae0cdd9f15de1fcb9e5e55@2x.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@react-navigation\\elements\\lib\\module\\assets\\clear-icon.c94f6478e7ae0cdd9f15de1fcb9e5e55@2x.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "e6d289701ee270723800581598072ee3cbac2f1b2b1cec309681faa99a4505f3",
+                                "key": "assets/__node_modules/@react-navigation/elements/lib/module/assets/clear-icon.c94f6478e7ae0cdd9f15de1fcb9e5e55.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@react-navigation\\elements\\lib\\module\\assets\\clear-icon.c94f6478e7ae0cdd9f15de1fcb9e5e55.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "521fc0eda5c82d0058853715b3363b92207b2185743c2f9a6ddf2fee31cef738",
+                                "key": "assets/__node_modules/@react-navigation/elements/lib/module/assets/back-icon.35ba0eaec5a4f5ed12ca16fabeae451d.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@react-navigation\\elements\\lib\\module\\assets\\back-icon.35ba0eaec5a4f5ed12ca16fabeae451d.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "image/png",
+                                "hash": "f85f48d0be2d9f331fc1cfe7285fc2078d30bb763f5158172f5a91df47bcbb79",
+                                "key": "assets/__node_modules/@react-navigation/elements/lib/module/assets/back-icon-mask.0a328cd9c1afd0afe8e3b1ec5165b1b4.png",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@react-navigation\\elements\\lib\\module\\assets\\back-icon-mask.0a328cd9c1afd0afe8e3b1ec5165b1b4.png"
+                            },
+                            {
+                                "cacheControl": "max-age=31536000,public,immutable",
+                                "contentType": "font/ttf",
+                                "hash": "225c08850d8abc25f989c41ed69644d3dd2776cf0ba0846cc66fc592123a50bd",
+                                "key": "assets/__node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Feather.a76d309774d33d9856f650bed4292a23.ttf",
+                                "source": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\apps\\inventario-app\\dist\\assets\\__node_modules\\@expo\\vector-icons\\build\\vendor\\react-native-vector-icons\\Fonts\\Feather.a76d309774d33d9856f650bed4292a23.ttf"
+                            }
+                        ],
+                        "purge": true,
+                        "region": "us-east-1"
+                    },
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:StaticSite::web",
+                    "dependencies": [
+                        "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket$aws:s3/bucketV2:BucketV2::webAssetsBucket",
+                        "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket$aws:s3/bucketPolicy:BucketPolicy::webAssetsPolicy"
+                    ],
+                    "provider": "urn:pulumi:staging::inventario::pulumi:providers:pulumi-nodejs::default::83196946-6acd-4afe-ab8b-541a525d614e",
+                    "propertyDependencies": {
+                        "__provider": [],
+                        "bucketName": [
+                            "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket$aws:s3/bucketPolicy:BucketPolicy::webAssetsPolicy",
+                            "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:Bucket$aws:s3/bucketV2:BucketV2::webAssetsBucket"
+                        ],
+                        "files": [],
+                        "purge": [],
+                        "region": []
+                    },
+                    "created": "2025-08-02T14:42:25.4739517Z",
+                    "modified": "2025-08-19T23:20:31.4418728Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:Function$aws:iam/role:Role::apiRole",
+                    "custom": true,
+                    "id": "inventario-staging-apiRole-txwfdsvc",
+                    "type": "aws:iam/role:Role",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDetachPolicies",
+                            "maxSessionDuration",
+                            "path"
+                        ],
+                        "assumeRolePolicy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Action\": \"sts:AssumeRole\",\n      \"Principal\": {\n        \"AWS\": \"arn:aws:iam::241291598884:root\",\n        \"Service\": \"lambda.amazonaws.com\"\n      }\n    }\n  ]\n}",
+                        "forceDetachPolicies": false,
+                        "inlinePolicies": [],
+                        "managedPolicyArns": [
+                            "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                        ],
+                        "maxSessionDuration": 3600,
+                        "name": "inventario-staging-apiRole-txwfdsvc",
+                        "path": "/",
+                        "tags": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "tagsAll": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        }
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:iam::241291598884:role/inventario-staging-apiRole-txwfdsvc",
+                        "assumeRolePolicy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::241291598884:root\",\"Service\":\"lambda.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+                        "createDate": "2025-08-02T03:55:13Z",
+                        "description": "",
+                        "forceDetachPolicies": false,
+                        "id": "inventario-staging-apiRole-txwfdsvc",
+                        "inlinePolicies": [],
+                        "managedPolicyArns": [
+                            "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                        ],
+                        "maxSessionDuration": 3600,
+                        "name": "inventario-staging-apiRole-txwfdsvc",
+                        "namePrefix": "",
+                        "path": "/",
+                        "permissionsBoundary": "",
+                        "tags": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "tagsAll": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "uniqueId": "AROATQLQZTQSLXFSL4TZS"
+                    },
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:Function::api",
+                    "provider": "urn:pulumi:staging::inventario::pulumi:providers:aws::default_6_66_2::86a6d9c9-4e6e-4273-8a9b-245f986672b2",
+                    "propertyDependencies": {
+                        "assumeRolePolicy": [],
+                        "inlinePolicies": [],
+                        "managedPolicyArns": [],
+                        "name": []
+                    },
+                    "created": "2025-08-02T03:55:13.4433489Z",
+                    "modified": "2025-08-02T03:55:13.4433489Z",
+                    "ignoreChanges": [
+                        "name"
+                    ]
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:StaticSite$pulumi-nodejs:dynamic:Resource::webInvalidation.sst.aws.DistributionInvalidation",
+                    "custom": true,
+                    "id": "invalidation",
+                    "type": "pulumi-nodejs:dynamic:Resource",
+                    "inputs": {
+                        "__provider": "exports.handler = __f0;\n\nvar __provider_proto = {};\nObject.defineProperty(__f1, \"prototype\", { value: __provider_proto });\nObject.defineProperty(__provider_proto, \"constructor\", { configurable: true, writable: true, value: __f1 });\nObject.defineProperty(__provider_proto, \"name\", { configurable: true, writable: true, value: __f2 });\nObject.setPrototypeOf(__f4, global.Error);\nObject.defineProperty(__provider_proto, \"create\", { configurable: true, writable: true, value: __f3 });\nObject.defineProperty(__provider_proto, \"delete\", { configurable: true, writable: true, value: __f5 });\nObject.defineProperty(__provider_proto, \"update\", { configurable: true, writable: true, value: __f6 });\nObject.defineProperty(__provider_proto, \"read\", { configurable: true, writable: true, value: __f7 });\nObject.defineProperty(__provider_proto, \"diff\", { configurable: true, writable: true, value: __f8 });\nvar __provider = Object.create(__provider_proto);\n__provider.type = \"Aws.DistributionInvalidation\";\n\nfunction __f1(__0) {\n  return (function() {\n    with({ this: undefined, arguments: undefined }) {\n\nreturn function /*constructor*/(type) {\n      this.type = type;\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f2(__0) {\n  return (function() {\n    with({ this: undefined, arguments: undefined }) {\n\nreturn function /*name*/(action) {\n      return \"Resource.\" + this.type + \".\" + action;\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f4(__0) {\n  return (function() {\n    with({ __super: global.Error, this: undefined, arguments: undefined }) {\n\nreturn function /*constructor*/(method) {\n    __super.call(this, `Method \"${method}\" not found`);\n    this.method = method;\n};\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\nconst http = require(\"http\");\n\nfunction __call(__0, __1) {\n  return (function() {\n    with({ MethodNotFoundError: __f4, call: __call, this: undefined, arguments: undefined }) {\n\nreturn async function /*call*/(method, args) {\n    return new Promise((resolve, reject) => {\n      const url = new URL(process.env.SST_SERVER + \"/rpc\");\n      const options = {\n        hostname: url.hostname,\n        port: url.port,\n        path: url.pathname,\n        method: \"POST\",\n        headers: {\n          \"Content-Type\": \"application/json\"\n        }\n      };\n      const req = http.request(options, (res) => {\n        let data = \"\";\n        res.on(\"data\", (chunk) => {\n          data += chunk;\n        });\n        res.on(\"end\", () => {\n          if (res.statusCode !== 200) {\n            reject(new Error(`Failed to call RPC: ${data}`));\n            return;\n          }\n          try {\n            const json = JSON.parse(data);\n            if (json.error) {\n              if (json.error.startsWith(\"rpc: can't find\")) {\n                reject(new MethodNotFoundError(method));\n                return;\n              }\n              reject(new Error(json.error));\n              return;\n            }\n            resolve(json.result);\n          } catch (error) {\n            reject(new Error(`Failed to parse JSON: ${error.message}`));\n          }\n        });\n      });\n      req.on(\"error\", (error) => {\n        reject(error);\n      });\n      req.setTimeout(0);\n      const body = JSON.stringify({\n        jsonrpc: \"1.0\",\n        method,\n        params: [args]\n      });\n      req.write(body);\n      req.end();\n    });\n  };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f3(__0) {\n  return (function() {\n    with({ call: __call, this: undefined, arguments: undefined }) {\n\nreturn async function /*create*/(inputs) {\n      return call(this.name(\"Create\"), inputs);\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f5(__0, __1) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*delete*/(id, outs) {\n      return call(this.name(\"Delete\"), { id, outs }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return;\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f6(__0, __1, __2) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*update*/(id, olds, news) {\n      return call(this.name(\"Update\"), { id, olds, news }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError)\n          return {\n            id\n          };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f7(__0, __1) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*read*/(id, props) {\n      return call(this.name(\"Read\"), { id, props }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return { id, props };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f8(__0, __1, __2) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*diff*/(id, olds, news) {\n      return call(this.name(\"Diff\"), { id, olds, news }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return { id, olds, news };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f0() {\n  return (function() {\n    with({ provider: __provider, this: undefined, arguments: undefined }) {\n\nreturn () => provider;\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n",
+                        "distributionId": "E148FX4BPVPDSH",
+                        "paths": [
+                            "/*"
+                        ],
+                        "version": "3672365eedf5e772677f9fcd537fa964",
+                        "wait": false
+                    },
+                    "outputs": {
+                        "__provider": "exports.handler = __f0;\n\nvar __provider_proto = {};\nObject.defineProperty(__f1, \"prototype\", { value: __provider_proto });\nObject.defineProperty(__provider_proto, \"constructor\", { configurable: true, writable: true, value: __f1 });\nObject.defineProperty(__provider_proto, \"name\", { configurable: true, writable: true, value: __f2 });\nObject.setPrototypeOf(__f4, global.Error);\nObject.defineProperty(__provider_proto, \"create\", { configurable: true, writable: true, value: __f3 });\nObject.defineProperty(__provider_proto, \"delete\", { configurable: true, writable: true, value: __f5 });\nObject.defineProperty(__provider_proto, \"update\", { configurable: true, writable: true, value: __f6 });\nObject.defineProperty(__provider_proto, \"read\", { configurable: true, writable: true, value: __f7 });\nObject.defineProperty(__provider_proto, \"diff\", { configurable: true, writable: true, value: __f8 });\nvar __provider = Object.create(__provider_proto);\n__provider.type = \"Aws.DistributionInvalidation\";\n\nfunction __f1(__0) {\n  return (function() {\n    with({ this: undefined, arguments: undefined }) {\n\nreturn function /*constructor*/(type) {\n      this.type = type;\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f2(__0) {\n  return (function() {\n    with({ this: undefined, arguments: undefined }) {\n\nreturn function /*name*/(action) {\n      return \"Resource.\" + this.type + \".\" + action;\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f4(__0) {\n  return (function() {\n    with({ __super: global.Error, this: undefined, arguments: undefined }) {\n\nreturn function /*constructor*/(method) {\n    __super.call(this, `Method \"${method}\" not found`);\n    this.method = method;\n};\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\nconst http = require(\"http\");\n\nfunction __call(__0, __1) {\n  return (function() {\n    with({ MethodNotFoundError: __f4, call: __call, this: undefined, arguments: undefined }) {\n\nreturn async function /*call*/(method, args) {\n    return new Promise((resolve, reject) => {\n      const url = new URL(process.env.SST_SERVER + \"/rpc\");\n      const options = {\n        hostname: url.hostname,\n        port: url.port,\n        path: url.pathname,\n        method: \"POST\",\n        headers: {\n          \"Content-Type\": \"application/json\"\n        }\n      };\n      const req = http.request(options, (res) => {\n        let data = \"\";\n        res.on(\"data\", (chunk) => {\n          data += chunk;\n        });\n        res.on(\"end\", () => {\n          if (res.statusCode !== 200) {\n            reject(new Error(`Failed to call RPC: ${data}`));\n            return;\n          }\n          try {\n            const json = JSON.parse(data);\n            if (json.error) {\n              if (json.error.startsWith(\"rpc: can't find\")) {\n                reject(new MethodNotFoundError(method));\n                return;\n              }\n              reject(new Error(json.error));\n              return;\n            }\n            resolve(json.result);\n          } catch (error) {\n            reject(new Error(`Failed to parse JSON: ${error.message}`));\n          }\n        });\n      });\n      req.on(\"error\", (error) => {\n        reject(error);\n      });\n      req.setTimeout(0);\n      const body = JSON.stringify({\n        jsonrpc: \"1.0\",\n        method,\n        params: [args]\n      });\n      req.write(body);\n      req.end();\n    });\n  };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f3(__0) {\n  return (function() {\n    with({ call: __call, this: undefined, arguments: undefined }) {\n\nreturn async function /*create*/(inputs) {\n      return call(this.name(\"Create\"), inputs);\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f5(__0, __1) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*delete*/(id, outs) {\n      return call(this.name(\"Delete\"), { id, outs }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return;\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f6(__0, __1, __2) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*update*/(id, olds, news) {\n      return call(this.name(\"Update\"), { id, olds, news }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError)\n          return {\n            id\n          };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f7(__0, __1) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*read*/(id, props) {\n      return call(this.name(\"Read\"), { id, props }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return { id, props };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f8(__0, __1, __2) {\n  return (function() {\n    with({ call: __call, MethodNotFoundError: __f4, this: undefined, arguments: undefined }) {\n\nreturn async function /*diff*/(id, olds, news) {\n      return call(this.name(\"Diff\"), { id, olds, news }).catch((ex) => {\n        if (ex instanceof MethodNotFoundError) return { id, olds, news };\n        throw ex;\n      });\n    };\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n\nfunction __f0() {\n  return (function() {\n    with({ provider: __provider, this: undefined, arguments: undefined }) {\n\nreturn () => provider;\n\n    }\n  }).apply(undefined, undefined).apply(this, arguments);\n}\n"
+                    },
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:StaticSite::web",
+                    "dependencies": [
+                        "urn:pulumi:staging::inventario::sst:aws:StaticSite$pulumi-nodejs:dynamic:Resource::webAssetFiles.sst.aws.BucketFiles",
+                        "urn:pulumi:staging::inventario::sst:aws:StaticSite$pulumi-nodejs:dynamic:Resource::webKvKeys.sst.aws.KvKeys",
+                        "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:CDN$aws:cloudfront/distribution:Distribution::webCdnDistribution"
+                    ],
+                    "provider": "urn:pulumi:staging::inventario::pulumi:providers:pulumi-nodejs::default::83196946-6acd-4afe-ab8b-541a525d614e",
+                    "propertyDependencies": {
+                        "__provider": [],
+                        "distributionId": [
+                            "urn:pulumi:staging::inventario::sst:aws:StaticSite$sst:aws:CDN$aws:cloudfront/distribution:Distribution::webCdnDistribution"
+                        ],
+                        "paths": [],
+                        "version": [],
+                        "wait": []
+                    },
+                    "created": "2025-08-02T14:43:43.1019996Z",
+                    "modified": "2025-08-19T23:20:32.2407383Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:Function$aws:s3/bucketObjectv2:BucketObjectv2::apiCode",
+                    "custom": true,
+                    "id": "assets/api-code-8ee7e98377b4fc621792f2ce1f65039850cda3acef857e742fbc72de77faedea.zip",
+                    "type": "aws:s3/bucketObjectv2:BucketObjectv2",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDestroy"
+                        ],
+                        "bucket": "sst-asset-fstbfuvounao",
+                        "forceDestroy": false,
+                        "key": "assets/api-code-8ee7e98377b4fc621792f2ce1f65039850cda3acef857e742fbc72de77faedea.zip",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                            "hash": "25573883093f43de608eb2dde6ce88405576dabcc619c5801343bbe65b7211dd",
+                            "path": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\.sst\\artifacts\\api\\code.zip"
+                        },
+                        "tags": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "tagsAll": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        }
+                    },
+                    "outputs": {
+                        "acl": null,
+                        "arn": "arn:aws:s3:::sst-asset-fstbfuvounao/assets/api-code-8ee7e98377b4fc621792f2ce1f65039850cda3acef857e742fbc72de77faedea.zip",
+                        "bucket": "sst-asset-fstbfuvounao",
+                        "bucketKeyEnabled": false,
+                        "cacheControl": "",
+                        "checksumAlgorithm": null,
+                        "checksumCrc32": "",
+                        "checksumCrc32c": "",
+                        "checksumSha1": "",
+                        "checksumSha256": "",
+                        "content": null,
+                        "contentBase64": null,
+                        "contentDisposition": "",
+                        "contentEncoding": "",
+                        "contentLanguage": "",
+                        "contentType": "application/octet-stream",
+                        "etag": "fbf61550a8a9712ada46bc568437de09",
+                        "forceDestroy": false,
+                        "id": "assets/api-code-8ee7e98377b4fc621792f2ce1f65039850cda3acef857e742fbc72de77faedea.zip",
+                        "key": "assets/api-code-8ee7e98377b4fc621792f2ce1f65039850cda3acef857e742fbc72de77faedea.zip",
+                        "kmsKeyId": null,
+                        "metadata": null,
+                        "objectLockLegalHoldStatus": "",
+                        "objectLockMode": "",
+                        "objectLockRetainUntilDate": "",
+                        "overrideProvider": null,
+                        "serverSideEncryption": "AES256",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                            "hash": "25573883093f43de608eb2dde6ce88405576dabcc619c5801343bbe65b7211dd",
+                            "path": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\.sst\\artifacts\\api\\code.zip"
+                        },
+                        "sourceHash": null,
+                        "storageClass": "STANDARD",
+                        "tags": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "tagsAll": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "versionId": "",
+                        "websiteRedirect": ""
+                    },
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:Function::api",
+                    "provider": "urn:pulumi:staging::inventario::pulumi:providers:aws::default_6_66_2::86a6d9c9-4e6e-4273-8a9b-245f986672b2",
+                    "propertyDependencies": {
+                        "bucket": [],
+                        "key": [],
+                        "source": []
+                    },
+                    "created": "2025-08-19T23:28:05.6580121Z",
+                    "modified": "2025-08-19T23:28:05.6580121Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:Function$aws:s3/bucketObjectv2:BucketObjectv2::apiSourcemap0",
+                    "custom": true,
+                    "id": "sourcemap/arn:aws:logs:us-east-1:241291598884:log-group:/aws/lambda/inventario-staging-apiFunction-tseknezh/8ee7e98377b4fc621792f2ce1f65039850cda3acef857e742fbc72de77faedea.bundle.mjs.map",
+                    "type": "aws:s3/bucketObjectv2:BucketObjectv2",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDestroy"
+                        ],
+                        "bucket": "sst-asset-fstbfuvounao",
+                        "forceDestroy": false,
+                        "key": "sourcemap/arn:aws:logs:us-east-1:241291598884:log-group:/aws/lambda/inventario-staging-apiFunction-tseknezh/8ee7e98377b4fc621792f2ce1f65039850cda3acef857e742fbc72de77faedea.bundle.mjs.map",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "ec7e3ed7bb2175d4d8effe023aa16fb9c7320cf747c4916920f67caf8da19fee",
+                            "path": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\.sst\\artifacts\\api-src\\bundle.mjs.map"
+                        },
+                        "tags": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "tagsAll": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        }
+                    },
+                    "outputs": {
+                        "acl": null,
+                        "arn": "arn:aws:s3:::sst-asset-fstbfuvounao/sourcemap/arn:aws:logs:us-east-1:241291598884:log-group:/aws/lambda/inventario-staging-apiFunction-tseknezh/8ee7e98377b4fc621792f2ce1f65039850cda3acef857e742fbc72de77faedea.bundle.mjs.map",
+                        "bucket": "sst-asset-fstbfuvounao",
+                        "bucketKeyEnabled": false,
+                        "cacheControl": "",
+                        "checksumAlgorithm": null,
+                        "checksumCrc32": "",
+                        "checksumCrc32c": "",
+                        "checksumSha1": "",
+                        "checksumSha256": "",
+                        "content": null,
+                        "contentBase64": null,
+                        "contentDisposition": "",
+                        "contentEncoding": "",
+                        "contentLanguage": "",
+                        "contentType": "application/octet-stream",
+                        "etag": "55925408e1bd8d9ba072cffc2ffbe919",
+                        "forceDestroy": false,
+                        "id": "sourcemap/arn:aws:logs:us-east-1:241291598884:log-group:/aws/lambda/inventario-staging-apiFunction-tseknezh/8ee7e98377b4fc621792f2ce1f65039850cda3acef857e742fbc72de77faedea.bundle.mjs.map",
+                        "key": "sourcemap/arn:aws:logs:us-east-1:241291598884:log-group:/aws/lambda/inventario-staging-apiFunction-tseknezh/8ee7e98377b4fc621792f2ce1f65039850cda3acef857e742fbc72de77faedea.bundle.mjs.map",
+                        "kmsKeyId": null,
+                        "metadata": null,
+                        "objectLockLegalHoldStatus": "",
+                        "objectLockMode": "",
+                        "objectLockRetainUntilDate": "",
+                        "overrideProvider": null,
+                        "serverSideEncryption": "AES256",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "ec7e3ed7bb2175d4d8effe023aa16fb9c7320cf747c4916920f67caf8da19fee",
+                            "path": "C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\.sst\\artifacts\\api-src\\bundle.mjs.map"
+                        },
+                        "sourceHash": null,
+                        "storageClass": "STANDARD",
+                        "tags": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "tagsAll": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "versionId": "",
+                        "websiteRedirect": ""
+                    },
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:Function::api",
+                    "provider": "urn:pulumi:staging::inventario::pulumi:providers:aws::default_6_66_2::86a6d9c9-4e6e-4273-8a9b-245f986672b2",
+                    "propertyDependencies": {
+                        "bucket": [],
+                        "key": [],
+                        "source": []
+                    },
+                    "retainOnDelete": true,
+                    "created": "2025-08-19T23:28:06.2967788Z",
+                    "modified": "2025-08-19T23:28:06.2967788Z"
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:Function$aws:lambda/function:Function::apiFunction",
+                    "custom": true,
+                    "id": "inventario-staging-apiFunction-trxdnweb",
+                    "type": "aws:lambda/function:Function",
+                    "inputs": {
+                        "__defaults": [
+                            "reservedConcurrentExecutions",
+                            "skipDestroy"
+                        ],
+                        "architectures": [
+                            "x86_64"
+                        ],
+                        "description": "",
+                        "environment": {
+                            "__defaults": [],
+                            "variables": {
+                                "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                                "ciphertext": "v1:pYc/cILs0JOcArkC:lh1xAbtPcPmCjQBRo+gT2YGV/zNxd7OyBUD+phfziucbRia4ZGC2+xtpL+oy4izX8s8oxCucwPnkErxYIGXgx6vQjnRjIYFV8ugoN6/6dUVurdEiZQLfi3I7jRQ8cJMQh3591FClUFgWbVJqsBzIZymnQKyWTLKKmJLEbmBlHDOXETi6kOSTvi90ykz+tce5GbZgkAzeU8UdDT7qufuBZYXycmpdwZY4nzYKtdM+aSr9zFC/TCWtAOO1ZBygUtsZbFB66TjQBmhJX7KRMn3/i/ZmDMLQdqZ9Mzn51LlRLjnL2GpoOZt5O7teamCfjtwBuY8U31WAoRgMjXbT1jdtS3D02cRm0auBbTNoBVSlTtn932Dqlo6UR5NJGrc55cPqOVMMaqaARIAIBddYlSua2XQBJNd7TNE9dzetenh5EtaYqVNu7Gd320eWurxiXpFnyVqW6pXyLXQ="
+                            }
+                        },
+                        "ephemeralStorage": {
+                            "__defaults": [],
+                            "size": 512
+                        },
+                        "handler": "bundle.handler",
+                        "loggingConfig": {
+                            "__defaults": [
+                                "applicationLogLevel",
+                                "systemLogLevel"
+                            ],
+                            "applicationLogLevel": "",
+                            "logFormat": "Text",
+                            "logGroup": "/aws/lambda/inventario-staging-apiFunction-tseknezh",
+                            "systemLogLevel": ""
+                        },
+                        "memorySize": 1024,
+                        "name": "inventario-staging-apiFunction-trxdnweb",
+                        "packageType": "Zip",
+                        "publish": false,
+                        "reservedConcurrentExecutions": -1,
+                        "role": "arn:aws:iam::241291598884:role/inventario-staging-apiRole-txwfdsvc",
+                        "runtime": "nodejs20.x",
+                        "s3Bucket": "sst-asset-fstbfuvounao",
+                        "s3Key": "assets/api-code-8ee7e98377b4fc621792f2ce1f65039850cda3acef857e742fbc72de77faedea.zip",
+                        "skipDestroy": false,
+                        "tags": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "tagsAll": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "timeout": 20
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000,\"delete\":600000000000,\"update\":600000000000}}",
+                        "architectures": [
+                            "x86_64"
+                        ],
+                        "arn": "arn:aws:lambda:us-east-1:241291598884:function:inventario-staging-apiFunction-trxdnweb",
+                        "code": null,
+                        "codeSha256": "JVc4gwk/Q95gjrLd5s6IQFV22rzGGcWAE0O75ltyEd0=",
+                        "codeSigningConfigArn": "",
+                        "deadLetterConfig": null,
+                        "description": "",
+                        "environment": {
+                            "variables": {
+                                "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                                "ciphertext": "v1:KEjKgF3Z6R3PzxbW:BoSlHKLqSAZv8qUjorsI3Fi2q8rrmldOKQriuHWHdggRyX+UCU9FRMoAycxwvC2Izz3a75DEHwdjKzqi4GWMzQUrpPBdJxgz5BvaXBBa9IENrXdGHy6jAUnsEVmGq6XTMIUwh9akw9WeXIsTOmaVm94JcmnhVVrnFMhg/551QbOyw8FJbego3E9DYlFGuzn1YnWJn3gfNh+9WE/wul66h/D2/ugjZNBEnuJBpC1v+LRfuGVMNxr3nMUQDFjw6l0PiBkfiBGcZDFT4BrrpUJ0FWbtmlazrlmKbbg8p1YcOpL2Rkf9hzXjMUrcB8yOVEigaYUUROB3uKVKyuNM4OAfdvi12hYj5F2r5zUCB+YiBykc/5EsE9uylemUNeSQh4zhQZC+h93crfAy78kjj9aUji1MgON6unnYDveiFkz0agxlySh9mYjb9gh8mxlFI/rhBL8pT5KbrAI="
+                            }
+                        },
+                        "ephemeralStorage": {
+                            "size": 512
+                        },
+                        "fileSystemConfig": null,
+                        "handler": "bundle.handler",
+                        "id": "inventario-staging-apiFunction-trxdnweb",
+                        "imageConfig": null,
+                        "imageUri": "",
+                        "invokeArn": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:241291598884:function:inventario-staging-apiFunction-trxdnweb/invocations",
+                        "kmsKeyArn": "",
+                        "lastModified": "2025-08-19T23:28:07.000+0000",
+                        "layers": null,
+                        "loggingConfig": {
+                            "applicationLogLevel": "",
+                            "logFormat": "Text",
+                            "logGroup": "/aws/lambda/inventario-staging-apiFunction-tseknezh",
+                            "systemLogLevel": ""
+                        },
+                        "memorySize": 1024,
+                        "name": "inventario-staging-apiFunction-trxdnweb",
+                        "packageType": "Zip",
+                        "publish": false,
+                        "qualifiedArn": "arn:aws:lambda:us-east-1:241291598884:function:inventario-staging-apiFunction-trxdnweb:$LATEST",
+                        "qualifiedInvokeArn": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:241291598884:function:inventario-staging-apiFunction-trxdnweb:$LATEST/invocations",
+                        "replaceSecurityGroupsOnDestroy": null,
+                        "replacementSecurityGroupIds": null,
+                        "reservedConcurrentExecutions": -1,
+                        "role": "arn:aws:iam::241291598884:role/inventario-staging-apiRole-txwfdsvc",
+                        "runtime": "nodejs20.x",
+                        "s3Bucket": "sst-asset-fstbfuvounao",
+                        "s3Key": "assets/api-code-8ee7e98377b4fc621792f2ce1f65039850cda3acef857e742fbc72de77faedea.zip",
+                        "s3ObjectVersion": null,
+                        "signingJobArn": "",
+                        "signingProfileVersionArn": "",
+                        "skipDestroy": false,
+                        "snapStart": null,
+                        "sourceCodeHash": "",
+                        "sourceCodeSize": 248830,
+                        "tags": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "tagsAll": {
+                            "sst:app": "inventario",
+                            "sst:stage": "staging"
+                        },
+                        "timeout": 20,
+                        "tracingConfig": {
+                            "mode": "PassThrough"
+                        },
+                        "version": "$LATEST",
+                        "vpcConfig": null
+                    },
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:Function::api",
+                    "dependencies": [
+                        "urn:pulumi:staging::inventario::random:index/randomBytes:RandomBytes::LambdaEncryptionKey",
+                        "urn:pulumi:staging::inventario::sst:aws:Function$aws:cloudwatch/logGroup:LogGroup::apiLogGroup",
+                        "urn:pulumi:staging::inventario::sst:aws:Function$aws:iam/role:Role::apiRole",
+                        "urn:pulumi:staging::inventario::sst:aws:Function$aws:s3/bucketObjectv2:BucketObjectv2::apiCode"
+                    ],
+                    "provider": "urn:pulumi:staging::inventario::pulumi:providers:aws::default_6_66_2::86a6d9c9-4e6e-4273-8a9b-245f986672b2",
+                    "propertyDependencies": {
+                        "architectures": [],
+                        "description": [],
+                        "environment": [
+                            "urn:pulumi:staging::inventario::random:index/randomBytes:RandomBytes::LambdaEncryptionKey"
+                        ],
+                        "ephemeralStorage": [],
+                        "handler": [],
+                        "loggingConfig": [
+                            "urn:pulumi:staging::inventario::sst:aws:Function$aws:cloudwatch/logGroup:LogGroup::apiLogGroup"
+                        ],
+                        "memorySize": [],
+                        "name": [],
+                        "packageType": [],
+                        "publish": [],
+                        "role": [
+                            "urn:pulumi:staging::inventario::sst:aws:Function$aws:iam/role:Role::apiRole"
+                        ],
+                        "runtime": [],
+                        "s3Bucket": [
+                            "urn:pulumi:staging::inventario::sst:aws:Function$aws:s3/bucketObjectv2:BucketObjectv2::apiCode"
+                        ],
+                        "s3Key": [
+                            "urn:pulumi:staging::inventario::sst:aws:Function$aws:s3/bucketObjectv2:BucketObjectv2::apiCode"
+                        ],
+                        "timeout": []
+                    },
+                    "created": "2025-08-02T04:03:37.2292317Z",
+                    "modified": "2025-08-19T23:28:12.4844993Z",
+                    "ignoreChanges": [
+                        "name"
+                    ]
+                },
+                {
+                    "urn": "urn:pulumi:staging::inventario::sst:aws:Function$aws:lambda/functionUrl:FunctionUrl::apiUrl",
+                    "custom": true,
+                    "id": "inventario-staging-apiFunction-trxdnweb",
+                    "type": "aws:lambda/functionUrl:FunctionUrl",
+                    "inputs": {
+                        "__defaults": [],
+                        "authorizationType": "NONE",
+                        "cors": {
+                            "__defaults": [],
+                            "allowHeaders": [
+                                "*"
+                            ],
+                            "allowMethods": [
+                                "*"
+                            ],
+                            "allowOrigins": [
+                                "*"
+                            ]
+                        },
+                        "functionName": {
+                            "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                            "ciphertext": "v1:20aPr/6l3b55pHJK:h7mZ5CxFYGvMix16SJ1GxjPYTtZKNTxE52RzC1cV+ugkdKKTeL1IPUEZmpFG4JyJ8jgjdOFG+pdC"
+                        },
+                        "invokeMode": "BUFFERED"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000}}",
+                        "authorizationType": "NONE",
+                        "cors": {
+                            "allowCredentials": false,
+                            "allowHeaders": [
+                                "*"
+                            ],
+                            "allowMethods": [
+                                "*"
+                            ],
+                            "allowOrigins": [
+                                "*"
+                            ],
+                            "exposeHeaders": null,
+                            "maxAge": 0
+                        },
+                        "functionArn": "arn:aws:lambda:us-east-1:241291598884:function:inventario-staging-apiFunction-trxdnweb",
+                        "functionName": {
+                            "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                            "ciphertext": "v1:xFTBNaP80fWoRXRC:Tgt0oGe/vS+NEojWewx1GqXlmwmjjOjOw+pcTtI7UmRdQIMV8y5cBevsfpj9XwjeG3OjuYB9cBR4"
+                        },
+                        "functionUrl": "https://zf2diku5sbjcj3zyenbqhzzeyq0nnnvm.lambda-url.us-east-1.on.aws/",
+                        "id": "inventario-staging-apiFunction-trxdnweb",
+                        "invokeMode": "BUFFERED",
+                        "qualifier": "",
+                        "urlId": "zf2diku5sbjcj3zyenbqhzzeyq0nnnvm"
+                    },
+                    "parent": "urn:pulumi:staging::inventario::sst:aws:Function::api",
+                    "dependencies": [
+                        "urn:pulumi:staging::inventario::sst:aws:Function$aws:cloudwatch/logGroup:LogGroup::apiLogGroup",
+                        "urn:pulumi:staging::inventario::random:index/randomBytes:RandomBytes::LambdaEncryptionKey",
+                        "urn:pulumi:staging::inventario::sst:aws:Function$aws:lambda/function:Function::apiFunction"
+                    ],
+                    "provider": "urn:pulumi:staging::inventario::pulumi:providers:aws::default_6_66_2::86a6d9c9-4e6e-4273-8a9b-245f986672b2",
+                    "propertyDependencies": {
+                        "authorizationType": [],
+                        "cors": [],
+                        "functionName": [
+                            "urn:pulumi:staging::inventario::sst:aws:Function$aws:cloudwatch/logGroup:LogGroup::apiLogGroup",
+                            "urn:pulumi:staging::inventario::random:index/randomBytes:RandomBytes::LambdaEncryptionKey",
+                            "urn:pulumi:staging::inventario::sst:aws:Function$aws:lambda/function:Function::apiFunction"
+                        ],
+                        "invokeMode": []
+                    },
+                    "created": "2025-08-02T04:03:37.8512251Z",
+                    "modified": "2025-08-02T04:03:37.8512251Z"
+                }
+            ],
+            "metadata": {}
+        }
+    }
+}

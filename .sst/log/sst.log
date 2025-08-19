@@ -1,0 +1,65 @@
+time=2025-08-19T18:32:17.547-05:00 level=INFO msg="checking for pulumi" path=C:\Users\kevin\AppData\Roaming\sst\bin\pulumi.exe
+time=2025-08-19T18:32:17.829-05:00 level=INFO msg="checking for bun" path=C:\Users\kevin\AppData\Roaming\sst\bin\bun.exe
+time=2025-08-19T18:32:17.853-05:00 level=INFO msg="initializing project" version=3.17.10
+time=2025-08-19T18:32:17.854-05:00 level=INFO msg="esbuild building" out=C:\Users\kevin\Documents\GITHUB\Proyecto_que_saque_de_pobre\Version1\.sst\platform\sst.config.1755646337854.mjs
+time=2025-08-19T18:32:17.861-05:00 level=INFO msg="esbuild built" outfile=C:\Users\kevin\Documents\GITHUB\Proyecto_que_saque_de_pobre\Version1\.sst\platform\sst.config.1755646337854.mjs
+time=2025-08-19T18:32:17.862-05:00 level=INFO msg="evaluating config"
+time=2025-08-19T18:32:17.992-05:00 level=INFO msg="config evaluated"
+time=2025-08-19T18:32:17.993-05:00 level=INFO msg="checking platform"
+time=2025-08-19T18:32:17.993-05:00 level=INFO msg="loading home"
+time=2025-08-19T18:32:17.994-05:00 level=INFO msg="aws credentials found" region=us-east-1 profile=""
+time=2025-08-19T18:32:17.994-05:00 level=INFO msg="fetching bootstrap"
+time=2025-08-19T18:32:18.514-05:00 level=INFO msg="found existing bootstrap" data="{\"version\":5,\"asset\":\"sst-asset-fstbfuvounao\",\"assetEcrRegistryId\":\"241291598884\",\"assetEcrUrl\":\"241291598884.dkr.ecr.us-east-1.amazonaws.com/sst-asset\",\"state\":\"sst-state-fstbfuvounao\",\"appsyncHttp\":\"\",\"appsyncRealtime\":\"\"}"
+time=2025-08-19T18:32:18.514-05:00 level=INFO msg="loaded config" app=inventario stage=staging
+time=2025-08-19T18:32:18.515-05:00 level=ERROR msg="failed to remove temp log file" err="CreateFile C:\\Users\\kevin\\AppData\\Local\\Temp\\C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\.sst\\log\\sst.log: The filename, directory name, or volume label syntax is incorrect."
+time=2025-08-19T18:32:18.515-05:00 level=INFO msg="initializing ui" isTTY=true
+time=2025-08-19T18:32:18.516-05:00 level=INFO msg="server port assigned" port=13557
+time=2025-08-19T18:32:18.516-05:00 level=INFO msg=starting service=server
+time=2025-08-19T18:32:18.516-05:00 level=INFO msg="running stack command" service=project.run cmd=deploy
+time=2025-08-19T18:32:18.516-05:00 level=INFO msg="INFO locking app=inventario stage=staging"
+time=2025-08-19T18:32:18.516-05:00 level=INFO msg="INFO getting data key=lock app=inventario stage=staging"
+time=2025-08-19T18:32:18.517-05:00 level=INFO msg=server service=server addr=0.0.0.0:13557
+time=2025-08-19T18:32:19.209-05:00 level=INFO msg="INFO putting update app=inventario stage=staging"
+time=2025-08-19T18:32:19.513-05:00 level=INFO msg="INFO getting passphrase app=inventario stage=staging"
+time=2025-08-19T18:32:19.942-05:00 level=INFO msg="INFO pulling state app=inventario stage=staging out=C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\.sst\\pulumi\\fe673b52da2b6942909c8cbf\\.pulumi\\stacks\\inventario\\staging.json"
+time=2025-08-19T18:32:21.190-05:00 level=INFO msg="got previous deployment" service=project.run updateID=fe673b52da2b6942909c8cbf
+time=2025-08-19T18:32:21.190-05:00 level=INFO msg="esbuild building" out=C:\Users\kevin\Documents\GITHUB\Proyecto_que_saque_de_pobre\Version1\.sst\platform\sst.config.1755646339939.mjs
+time=2025-08-19T18:32:21.357-05:00 level=INFO msg="esbuild built" outfile=C:\Users\kevin\Documents\GITHUB\Proyecto_que_saque_de_pobre\Version1\.sst\platform\sst.config.1755646339939.mjs
+time=2025-08-19T18:32:21.379-05:00 level=INFO msg="built sst.config.ts" service=project.run updateID=fe673b52da2b6942909c8cbf to=C:\Users\kevin\Documents\GITHUB\Proyecto_que_saque_de_pobre\Version1\.sst\platform\sst.config.1755646339939.mjs
+time=2025-08-19T18:32:21.392-05:00 level=INFO msg="tracked files" service=project.run updateID=fe673b52da2b6942909c8cbf
+time=2025-08-19T18:32:21.392-05:00 level=INFO msg="INFO getting data key=secret app=inventario stage=_fallback"
+time=2025-08-19T18:32:21.394-05:00 level=INFO msg="INFO getting data key=secret app=inventario stage=staging"
+time=2025-08-19T18:32:21.787-05:00 level=INFO msg="starting pulumi" service=project.run updateID=fe673b52da2b6942909c8cbf args="[C:\\Users\\kevin\\AppData\\Roaming\\sst\\bin\\pulumi.exe up --yes -f --stack organization/inventario/staging --non-interactive --event-log C:\\Users\\kevin\\Documents\\GITHUB\\Proyecto_que_saque_de_pobre\\Version1\\.sst\\pulumi\\fe673b52da2b6942909c8cbf\\eventlog.json --config aws:defaultTags={\"tags\":{\"sst:app\":\"inventario\",\"sst:stage\":\"staging\"}} --config aws:region=us-east-1]"
+time=2025-08-19T18:32:26.788-05:00 level=INFO msg="INFO pushing partial state updateID=fe673b52da2b6942909c8cbf"
+time=2025-08-19T18:32:39.138-05:00 level=INFO msg="rpc request" method=POST url=/rpc
+time=2025-08-19T18:32:39.139-05:00 level=INFO msg="building function" runtime=nodejs20.x functionID=api
+time=2025-08-19T18:32:39.140-05:00 level=INFO msg="rpc request" method=POST url=/rpc
+time=2025-08-19T18:32:39.145-05:00 level=INFO msg="loader info" service=runtime.node functionID=api loader=map[]
+time=2025-08-19T18:32:39.145-05:00 level=INFO msg="running esbuild" service=runtime.node functionID=api
+time=2025-08-19T18:32:39.785-05:00 level=INFO msg="esbuild finished" service=runtime.node functionID=api
+time=2025-08-19T18:32:39.792-05:00 level=INFO msg="function built" runtime=nodejs20.x functionID=api
+time=2025-08-19T18:32:40.570-05:00 level=INFO msg="rpc request" method=POST url=/rpc
+time=2025-08-19T18:32:40.608-05:00 level=INFO msg="rpc request" method=POST url=/rpc
+time=2025-08-19T18:32:40.672-05:00 level=INFO msg="rpc request" method=POST url=/rpc
+time=2025-08-19T18:32:40.706-05:00 level=INFO msg="rpc request" method=POST url=/rpc
+time=2025-08-19T18:32:40.780-05:00 level=INFO msg="rpc request" method=POST url=/rpc
+time=2025-08-19T18:32:40.850-05:00 level=INFO msg="INFO pushing partial state updateID=fe673b52da2b6942909c8cbf"
+time=2025-08-19T18:32:42.390-05:00 level=INFO msg="INFO pushing partial state updateID=fe673b52da2b6942909c8cbf"
+time=2025-08-19T18:32:44.297-05:00 level=INFO msg="INFO pushing partial state updateID=fe673b52da2b6942909c8cbf"
+time=2025-08-19T18:32:49.038-05:00 level=INFO msg="INFO pushing partial state updateID=fe673b52da2b6942909c8cbf"
+time=2025-08-19T18:32:49.561-05:00 level=INFO msg="pulumi exited" service=project.run updateID=fe673b52da2b6942909c8cbf err=<nil>
+time=2025-08-19T18:32:49.561-05:00 level=INFO msg="eof and exited" service=project.run updateID=fe673b52da2b6942909c8cbf eofs=0
+time=2025-08-19T18:32:49.561-05:00 level=INFO msg="eof and exited" service=project.run updateID=fe673b52da2b6942909c8cbf eofs=1
+time=2025-08-19T18:32:49.561-05:00 level=INFO msg="breaking out of tail loop" service=project.run updateID=fe673b52da2b6942909c8cbf
+time=2025-08-19T18:32:49.561-05:00 level=INFO msg="parsing state" service=project.run updateID=fe673b52da2b6942909c8cbf
+time=2025-08-19T18:32:49.882-05:00 level=INFO msg="INFO pushing partial state updateID=fe673b52da2b6942909c8cbf"
+time=2025-08-19T18:32:50.772-05:00 level=INFO msg="generating types" root=C:\Users\kevin\Documents\GITHUB\Proyecto_que_saque_de_pobre\Version1
+time=2025-08-19T18:32:50.821-05:00 level=INFO msg="canceling partial" service=project.run updateID=fe673b52da2b6942909c8cbf
+time=2025-08-19T18:32:50.821-05:00 level=INFO msg="waiting for partial to exit" service=project.run updateID=fe673b52da2b6942909c8cbf
+time=2025-08-19T18:32:50.866-05:00 level=INFO msg="INFO pushing snapshot updateID=fe673b52da2b6942909c8cbf"
+time=2025-08-19T18:32:50.866-05:00 level=INFO msg="INFO pushing eventlog updateID=fe673b52da2b6942909c8cbf"
+time=2025-08-19T18:32:51.880-05:00 level=INFO msg="INFO putting update app=inventario stage=staging"
+time=2025-08-19T18:32:52.174-05:00 level=INFO msg="done running stack command" service=project.run updateID=fe673b52da2b6942909c8cbf resources=28
+time=2025-08-19T18:32:52.205-05:00 level=INFO msg="INFO unlocking app=inventario stage=staging"
+time=2025-08-19T18:32:52.512-05:00 level=INFO msg="shutting down server" service=server
+time=2025-08-19T18:32:52.513-05:00 level=INFO msg="server done" service=server

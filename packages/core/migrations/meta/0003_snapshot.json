@@ -1,0 +1,329 @@
+{
+  "id": "27336040-f11d-4c84-8937-f909831dc396",
+  "prevId": "960eef94-f85f-4adc-bb12-ad0de3f2ace5",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.animal": {
+      "name": "animal",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "char(30)",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "time_created": {
+          "name": "time_created",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "time_updated": {
+          "name": "time_updated",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "CURRENT_TIMESTAMP(3)"
+        },
+        "time_deleted": {
+          "name": "time_deleted",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "is_active": {
+          "name": "is_active",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "description": {
+          "name": "description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "image": {
+          "name": "image",
+          "type": "varchar(612)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "birth_date": {
+          "name": "birth_date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "breed": {
+          "name": "breed",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "weight": {
+          "name": "weight",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.birth": {
+      "name": "birth",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "char(30)",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "time_created": {
+          "name": "time_created",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "time_updated": {
+          "name": "time_updated",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "CURRENT_TIMESTAMP(3)"
+        },
+        "time_deleted": {
+          "name": "time_deleted",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "is_active": {
+          "name": "is_active",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": true
+        },
+        "birth_date": {
+          "name": "birth_date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "number_of_offspring": {
+          "name": "number_of_offspring",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "animal_id": {
+          "name": "animal_id",
+          "type": "char(30)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "birth_animal_id_animal_id_fk": {
+          "name": "birth_animal_id_animal_id_fk",
+          "tableFrom": "birth",
+          "tableTo": "animal",
+          "columnsFrom": [
+            "animal_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.insemination": {
+      "name": "insemination",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "char(30)",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "time_created": {
+          "name": "time_created",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "time_updated": {
+          "name": "time_updated",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "CURRENT_TIMESTAMP(3)"
+        },
+        "time_deleted": {
+          "name": "time_deleted",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "is_active": {
+          "name": "is_active",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": true
+        },
+        "insemination_date": {
+          "name": "insemination_date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "animal_id": {
+          "name": "animal_id",
+          "type": "char(30)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "insemination_animal_id_animal_id_fk": {
+          "name": "insemination_animal_id_animal_id_fk",
+          "tableFrom": "insemination",
+          "tableTo": "animal",
+          "columnsFrom": [
+            "animal_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.vaccine": {
+      "name": "vaccine",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "char(30)",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "time_created": {
+          "name": "time_created",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "time_updated": {
+          "name": "time_updated",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "CURRENT_TIMESTAMP(3)"
+        },
+        "time_deleted": {
+          "name": "time_deleted",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "is_active": {
+          "name": "is_active",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": true
+        },
+        "vaccine_date": {
+          "name": "vaccine_date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "type_of_vaccine": {
+          "name": "type_of_vaccine",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "animal_id": {
+          "name": "animal_id",
+          "type": "char(30)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "vaccine_animal_id_animal_id_fk": {
+          "name": "vaccine_animal_id_animal_id_fk",
+          "tableFrom": "vaccine",
+          "tableTo": "animal",
+          "columnsFrom": [
+            "animal_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

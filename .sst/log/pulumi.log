@@ -1,0 +1,43 @@
+Updating (staging):
+@ updating.......
+
+@ updating..........
+    pulumi:pulumi:Stack inventario-staging running (node:23692) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+    pulumi:pulumi:Stack inventario-staging running (Use `node --trace-warnings ...` to show where the warning was created)
+@ updating........
+ ++ aws:s3:BucketObjectv2 apiCode creating replacement (0s) [diff: ~key,source]
+ ++ aws:s3:BucketObjectv2 apiSourcemap0 creating replacement (0s)[retain] [diff: ~key,source]
+@ updating....
+ ++ aws:s3:BucketObjectv2 apiCode created replacement (1s) [diff: ~key,source]
+ +- aws:s3:BucketObjectv2 apiCode replacing (0s) [diff: ~key,source]
+ +- aws:s3:BucketObjectv2 apiCode replaced (0.00s) [diff: ~key,source]
+ ~  aws:lambda:Function apiFunction updating (0s) [diff: ~s3Key]
+@ updating.....
+ ++ aws:s3:BucketObjectv2 apiSourcemap0 created replacement (3s)[retain] [diff: ~key,source]
+ +- aws:s3:BucketObjectv2 apiSourcemap0 replacing (0s)[retain] [diff: ~key,source]
+ +- aws:s3:BucketObjectv2 apiSourcemap0 replaced (0.00s)[retain] [diff: ~key,source]
+@ updating........
+ ~  aws:lambda:Function apiFunction updated (6s) [diff: ~s3Key]
+ -- aws:s3:BucketObjectv2 apiSourcemap0 deleting original (0s)[retain] [diff: ~key,source]
+ -- aws:s3:BucketObjectv2 apiCode deleting original (0s) [diff: ~key,source]
+ -- aws:s3:BucketObjectv2 apiSourcemap0 deleted original (0.02s)[retain] [diff: ~key,source]
+ -- aws:s3:BucketObjectv2 apiCode deleted original (0.24s) [diff: ~key,source]
+@ updating....
+    pulumi:pulumi:Stack inventario-staging  2 messages
+Diagnostics:
+  pulumi:pulumi:Stack (inventario-staging):
+    (node:23692) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+    (Use `node --trace-warnings ...` to show where the warning was created)
+
+Outputs:
+    _protect: false
+    api     : "https://zf2diku5sbjcj3zyenbqhzzeyq0nnnvm.lambda-url.us-east-1.on.aws/"
+    web     : "https://d31whwn9krmyev.cloudfront.net"
+
+Resources:
+    ~ 1 updated
+    +-2 replaced
+    3 changes. 22 unchanged
+
+Duration: 21s
+
