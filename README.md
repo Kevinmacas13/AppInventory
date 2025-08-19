@@ -102,6 +102,8 @@ The API will be available at `https://zf2diku5sbjcj3zyenbqhzzeyq0nnnvm.lambda-ur
 bun --cwd apps/inventario-app start
 ```
 
+The react native web app will be available at `https://d31whwn9krmyev.cloudfront.net`
+
 This will start the Expo development server. You can then scan the QR code with the Expo Go app on your mobile device or run it in an emulator.
 
 ## 📖 API Documentation
